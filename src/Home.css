@@ -1,0 +1,243 @@
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #333;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 1. 전체 컨테이너 */
+.container {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid red;
+}
+
+/* 2. 헤더 영역 경로: .container > .header */
+.container>.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border: 1px solid green;
+}
+
+.header>.logo {
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  font-size: 1.2rem;
+}
+
+.header>.navi a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #86868b;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.header>.navi a:hover {
+  color: #1d1d1f;
+}
+
+/* 섹션 00 */
+.container>.section00 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section00>.title {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section00>.comment {
+  font-size: 1.5rem;
+  color: #86868b;
+  font-weight: 300;
+}
+
+/* 프로필 */
+.container > .section01 {
+  width: 100%;
+  padding: 150px 50px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.section01 > .profile {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.profile > h1 {
+  font-size: 48px;
+  font-weight: 800;
+  /* letter-spacing: -0.03em;
+  margin-bottom: 20px; */
+}
+
+.profile > .profile01,
+.profile > .profile02 {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #d2d2d7;
+  padding-top: 40px;
+}
+
+.profile h3 {
+  width: 20%;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.profile01 .edu, 
+.profile02 .edu {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.edu:last-child {
+  margin-bottom: 0;
+}
+
+.edu > .year {
+  font-size: 16px;
+  color: #86868b;
+  font-weight: 500;
+}
+
+.edu > .school {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.edu > .school_info {
+  font-size: 17px;
+  color: #6e6e73;
+  line-height: 1.6;
+  max-width: 800px;
+  word-break: keep-all;
+}
+
+/* 프로젝트 */
+.container>.section02 {
+  width: 100%;
+  padding: 150px 50px;
+  background-color: #f5f5f7;
+}
+
+.section02>.project {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project>.card01,
+.project>.card02,
+.project>.card03 {
+  display: flex;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease;
+}
+
+.card01:hover,
+.card02:hover,
+.card03:hover {
+  transform: translateY(-3px);
+}
+
+.project-img {
+  width: 100%;
+  height: 400px;
+  background-color: #e8e8ed;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  justify-content: center;
+}
+
+.card01 .project-info>span,
+.card02 .project-info>span,
+.card03 .project-info>span,
+.card01 .project-info>span .bi-arrow-right-short,
+.card02 .project-info>span .bi-arrow-right-short,
+.card03 .project-info>span .bi-arrow-right-short {
+  color: #0066cc;
+}
+
+.project-info>h3 {
+  font-size: 35px;
+  margin: 0;
+}
+
+.project-info>p {
+  color: #6e6e73;
+  line-height: 1.6;
+  font-size: 17px;
+  /* 단어 줄바꿈 */
+  word-break: keep-all;
+  text-align: left;
+}
+
+/* 푸터 */
+.container>.footer {
+  padding: 100px 50px;
+  border-top: 1px solid #d2d2d7;
+  text-align: center;
+}
+
+.footer>h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer>p {
+  color: #86868b;
+  font-size: 0.9rem;
+}
