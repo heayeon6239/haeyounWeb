@@ -1,5 +1,5 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -12,52 +12,24 @@ body {
   margin: 0 auto;
 }
 
-/* 1. 전체 컨테이너 */
+/* 전체 컨테이너 */
 .container {
   width: 100%;
   background-color: #ffffff;
   color: #1d1d1f;
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", sans-serif;
   -webkit-font-smoothing: antialiased;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
-    flex-direction: column;
-    align-items: center; /* 가로축 중앙 정렬 */
-}
-
-/* 2. 헤더 영역 경로: .container > .header */
-.container>.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 30px;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  z-index: 1000;
-  border: 1px solid green;
+  /* 가로축 중앙 정렬 */
 }
 
-.header>.logo {
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  font-size: 1.2rem;
-}
-
-.header>.navi a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #86868b;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.header>.navi a:hover {
-  color: #1d1d1f;
-}
+/* ★ 원하는 만큼 여백을 줍니다 */
+/* section{
+  scroll-margin-top: 80px;
+} */
 
 /* 섹션 00 */
 .container>.section00 {
@@ -85,116 +57,159 @@ body {
 
 /* 프로필 */
 .section01 {
-    padding: 150px 0;
-    background: linear-gradient(180deg, #fefefe 0%, #e8f0fb 90%);
-    display: flex;
-    justify-content: center;
-    width: 100%;
+padding: 150px 0;
+  /* 여러 방향에서 빛이 들어오는 느낌의 메쉬 그라데이션 */
+  background-color: #1e253a;
+  background-image: 
+    /* 1. 왼쪽 상단: 더 딥한 블루 (범위를 70%로 넓힘) */
+    radial-gradient(at 0% 0%, rgba(100, 150, 255, 0.6) 0px, transparent 70%),
+    
+    /* 2. 오른쪽 상단: 화사한 퍼플 (범위를 60%로 조절) */
+    radial-gradient(at 100% 0%, rgba(210, 160, 255, 0.7) 0px, transparent 60%),
+    
+    /* 3. 하단 중앙: 싱그러운 민트 (대비감을 위해 채도를 높임) */
+    radial-gradient(at 50% 100%, rgba(120, 255, 210, 0.5) 0px, transparent 80%),
+    
+    /* 4. 오른쪽 하단: 은은한 핑크 한 방울 (더 극단적인 색감을 위해 추가) */
+    radial-gradient(at 100% 100%, rgba(255, 200, 220, 0.4) 0px, transparent 50%);
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .inner {
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .section-title {
-    font-size: 45px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 35px;
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.section_comment {
+  font-size: 20px;
+}
+
+.section_comment>span {
+  color: #007fff;
 }
 
 .profile_main_card {
-    background: #ffffff;
-    border-radius: 60px;
-    padding: 70px 60px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  /* 1. 반투명한 배경 */
+  background: rgba(255, 255, 255, 0.2);
+
+  /* 2. ★ 핵심: 뒤 배경 뿌옇게 처리 (필터) */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* 사파리 브라우저 지원 */
+
+  /* 3. 테두리와 그림자로 입체감 주기 */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* 은은한 유리 테두리 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* 부드러운 그림자 */
+
+  /* 기존 스타일 유지 */
+  border-radius: 60px;
+  padding: 60px;
 }
 
 .card_header {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+  /* background: linear-gradient(...) <- 이 부분을 삭제하거나 아래처럼 transparent로 변경 */
+  background: transparent;
+  padding: 20px;
+  width: 100%;
+  /* 기존 500px 고정보다 100%가 더 자연스럽습니다 */
+  border-radius: 20px;
 }
 
-.profile_img {
-    width: 130px;
-    height: 130px;
-    background: #f2f2f7;
-    border-radius: 50%;
-    margin: 0 auto 25px;
+.profile_img>img {
+  width: 150px;
+  height: 150px;
+  background: #d3dde6;
+  border-radius: 50%;
+  margin: 0 auto 25px;
 }
 
-.card_header h4 { 
-  font-size: 24px; 
-  font-weight: 800; 
-  margin-bottom: 12px; 
+.card_header h4 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
-.card_header p { 
-  font-size: 15px; 
-  color: #86868b; 
-  margin-bottom: 15px; 
+.card_header p {
+  font-size: 15px;
+  color: #86868b;
+  margin-bottom: 15px;
 }
 
-.description { 
-  font-size: 16px; 
-  font-weight: 600; 
+.description {
+  font-size: 16px;
+  font-weight: 600;
   color: #1d1d1f;
 }
 
 .card_bottom_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
 .info_box {
-    padding: 40px;
-    border-radius: 40px;
-}
-
-.info_box.pain { 
-  background: #f5f5f7;
-}
-.info_box.needs { 
-  background: #f0f7ff; 
+  padding: 30px;
+  border-radius: 40px;
+  /* 기존 #f5f5f7 대신 반투명한 흰색 사용 */
+  background: rgba(245, 245, 247, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tag_label {
-    display: inline-block;
-    padding: 5px 15px;
-    background: #ffffff;
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: 800;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  display: inline-block;
+  padding: 5px 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
-.item { margin-bottom: 25px; }
-.item:last-child { margin-bottom: 0; }
+.item {
+  margin-bottom: 25px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
 
 .date {
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    color: #86868b;
-    margin-bottom: 6px;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #86868b;
+  margin-bottom: 6px;
 }
 
 .info_box p {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1d1d1f;
-    line-height: 1.4;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.4;
 }
 
 .sub_txt {
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    color: #6e6e73 !important;
-    margin-top: 8px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #6e6e73 !important;
+  margin-top: 8px;
 }
 
 /* 프로젝트 */
@@ -205,9 +220,6 @@ body {
 }
 
 .section02>.project {
-  /* display: grid;
-  grid-template-columns: 1fr; */
-  /* gap: 40px; */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -225,12 +237,6 @@ body {
   justify-content: space-between
 }
 
-.card01:hover,
-.card02:hover,
-.card03:hover {
-  transform: translateY(-3px);
-}
-
 .project-img {
   width: 458px;
   height: 400px;
@@ -239,13 +245,15 @@ body {
   overflow: hidden;
 }
 
-.project-img .charang{
+.project-img .charang {
   width: 458px;
 }
-.project-img .ott{
+
+.project-img .ott {
   width: 524px;
 }
-.project-img .movie{
+
+.project-img .movie {
   width: 459px;
 }
 
@@ -259,12 +267,12 @@ body {
   width: 604px;
 }
 
-.card01 .project-info>span,
-.card02 .project-info>span,
-.card03 .project-info>span,
-.card01 .project-info>span .bi-arrow-right-short,
-.card02 .project-info>span .bi-arrow-right-short,
-.card03 .project-info>span .bi-arrow-right-short {
+.card01 .project-info .detailPage,
+.card02 .project-info .detailPage,
+.card03 .project-info .detailPage,
+.card01 .project-info .detailPage .bi-arrow-right-short,
+.card02 .project-info .detailPage .bi-arrow-right-short,
+.card03 .project-info .detailPage .bi-arrow-right-short {
   color: #0066cc;
 }
 
@@ -282,275 +290,182 @@ body {
   text-align: left;
 }
 
-/* 푸터 */
-.container>.footer {
-  padding: 100px 50px;
-  border-top: 1px solid #d2d2d7;
-  text-align: center;
-}
-
-.footer>h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.footer>p {
-  color: #86868b;
-  font-size: 0.9rem;
-}
-
 
 /* 공통 섹션 타이틀 */
 .sub-title {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 60px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-/* User Interview 스타일 */
-/* .section-interview {
-    padding: 150px 0;
-    background-color: #ffffff;
-}
 
-.interview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.interview-card {
-    background: #f5f5f7;
-    padding: 40px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.q-tag { 
-  color: #86868b; 
-  font-weight: 600; 
-  font-size: 0.9rem; 
-}
-
-.answer { 
-  font-size: 1.2rem; 
-  font-weight: 600; 
-  line-height: 1.5; 
-  color: #1d1d1f; 
-}
-
-.user-info { 
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  margin-top: 10px; 
-}
-
-.user-avatar { width: 32px; height: 32px; background: #d2d2d7; border-radius: 50%; } */
-
-/* ============================================================
-   기술 스택 및 도구 (Section 03) - 애플 스타일
-   ============================================================ */
+/* 기술 스택 및 도구 */
 .section03 {
-    padding: 150px 0;
-    background-color: #fff; /* 깨끗한 화이트 배경 */
+  padding: 150px 0;
+  background-color: #fff;
+  min-height: 900px;
 }
 
-/* 카테고리별 그리드 배치 (2~3열) */
+.select {
+  position: relative;
+  /* 슬라이더의 기준점 */
+  display: inline-flex;
+  background-color: #f2f2f7;
+  padding: 4px;
+  border-radius: 31px;
+  z-index: 1;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+/* 움직이는 흰색 알약 */
+.slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  /* 패딩 제외한 높이 */
+  width: 110px;
+  /* ★ 버튼 하나의 너비와 맞춰야 함 */
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* 움직임 */
+  z-index: -1;
+  /* 버튼 글자 뒤로 가기 */
+}
+
+/* 타입에 따른 위치 */
+.pos-0 {
+  transform: translateX(0);
+}
+
+.pos-1 {
+  transform: translateX(110px);
+}
+
+.pos-2 {
+  transform: translateX(220px);
+}
+
+.select>button {
+  /* 넓이 통일 */
+  width: 110px;
+  background: none;
+  border: none;
+  z-index: 2;
+  transition: color 0.3s;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
+}
+
+.select>button.active {
+  color: #333;
+  font-weight: bold;
+}
+
 .stack_grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 기본 2열 분할 */
-    gap: 30px;
-    width: 100%;
+  width: 100%;
+  transition: 0.3s;
 }
 
-/* 개별 카테고리 박스 (화이트 카드) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    /* 살짝 아래에서 위로 올라오는 효과 */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .tool_box {
-    background: rgba(255, 255, 255, 0.85); /* 반투명 유리 질감 효과 */
-    backdrop-filter: blur(20px);
-    border-radius: 40px; /* 애플 특유의 부드러운 R값 */
-    padding: 50px 40px;
-    border: 1px solid #ffffff; /* 유리 질감 강조를 위한 화이트 보더 */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
-    transition: 0.3s;
-}
-
-.tool_box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  /* 반투명 유리 질감 효과 */
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  /* 애플 특유의 부드러운 R값 */
+  padding: 40px 40px 30px 40px;
+  border: 1px solid #f6f6f6;
+  /* 유리 질감 강조를 위한 화이트 보더 */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  animation: fadeIn 0.5s ease-out;
 }
 
 /* 카테고리 헤더 */
 .cate_header {
-    text-align: center;
-    margin-bottom: 45px;
+  text-align: center;
+  margin-bottom: 45px;
 }
 
 .cate_label {
-    display: inline-block;
-    padding: 6px 18px;
-    background: #f5f5f7; /* 연한 애플 회색 배경 */
-    color: #1d1d1f;
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: 700;
+  display: inline-block;
+  padding: 6px 18px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
 }
 
-/* 아이콘 그리드 배치 (5열) */
+/* 1. 아이콘들을 감싸는 바구니 */
 .icon_list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5열 분할 */
-    gap: 25px;
-    justify-items: center; /* 아이콘 중앙 정렬 */
-    width: 100%;
+  display: flex;
+  /* 가로로 나열 */
+  flex-wrap: wrap;
+  /* 칸이 모자라면 다음 줄로 넘김 */
+  justify-content: flex-start;
+  /* 아이콘 덩어리 전체를 가로 중앙으로 */
+  align-items: center;
+  /* 세로 축도 중앙 정렬 */
+  gap: 40px 75px;
+  /* 아이콘 사이 간격 (세로 30px, 가로 40px) */
+  width: 100%;
+  /* 부모 박스 안에서 꽉 차게 */
+  margin-top: 30px;
 }
 
-/* 개별 아이콘 아이템 */
+/* 2. 개별 아이콘 박스 (매우 중요!) */
 .stack_item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* 아이콘 이미지 아래에 텍스트가 오도록 세로 정렬 */
+  align-items: center;
+  /* 이미지와 텍스트를 중앙 정렬 */
+  justify-content: center;
+  width: 100px;
+  /* 아이콘 하나당 차지할 너비 고정 (이게 있어야 정렬이 예쁨) */
 }
 
+/* 3. 아이콘 이미지 크기 조절 */
 .stack_item img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain; /* 비율 유지 */
-    margin-bottom: 10px;
-    transition: 0.3s;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 /* 아이콘 글자 (호버 시에만 표시) */
 .stack_item p {
-    font-size: 13px;
-    color: #86868b;
-    font-weight: 400;
-    opacity: 0; /* 평소에는 숨김 */
-    transition: 0.3s;
-    white-space: nowrap; /* 글자 줄바꿈 방지 */
+  font-size: 13px;
+  color: #86868b;
+  font-weight: 400;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+  /* 글자 줄바꿈 방지 */
 }
 
-/* 아이콘 호버 시 효과 */
-.stack_item:hover img { transform: scale(1.15); }
-.stack_item:hover p { opacity: 1; } /* 글자 나타남 */
-
-
-/* ============================================================
-   다크모드 설정 (기존 :root 아래나 최하단에 추가)
-   ============================================================ */
-
-/* 1. 다크모드 색상 변수 정의 */
-body.dark {
-    --bg-color: #1c1c1e;               /* 전체 배경: 짙은 회색 */
-    --text-color: #f5f5f7;            /* 메인 글자: 밝은 회색 */
-    --sub-text: #a1a1a6;              /* 보조 글자: 흐린 회색 */
-    --card-bg: rgba(44, 44, 46, 0.8); /* 카드 배경: 반투명 다크 */
-    --inner-box-bg: #3a3a3c;          /* 내부 박스(학력): 진한 회색 */
-    --inner-box-blue: #2c2c2e;        /* 내부 박스(교육): 톤다운된 네이비/그레이 */
-    --header-bg: rgba(28, 28, 30, 0.8);
-    --border-color: #323237;
+.stack_item:hover p {
+  opacity: 1;
 }
 
-/* 2. 다크모드 적용 시 기본 배경/글자색 변경 */
-body.dark .container {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* 3. 헤더 및 다크모드 토글 버튼 */
-body.dark .container>.header {
-    background-color: var(--header-bg);
-    border-color: var(--border-color); /* 기존 초록 보더 대신 적용 가능 */
-}
-
-.dark-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #86868b;
-    margin-left: 20px;
-    padding: 5px;
-    transition: color 0.3s, transform 0.2s;
-}
-
-.dark-toggle:hover {
-    color: #1d1d1f;
-    transform: scale(1.1);
-}
-
-body.dark .dark-toggle {
-    color: #f5f5f7;
-}
-
-/* 4. 섹션 00 (타이틀 영역) */
-body.dark .section00>.comment {
-    color: var(--sub-text);
-}
-
-/* 5. 섹션 01 (프로필 카드 영역) */
-body.dark .profile_main_card {
-    background: var(--card-bg);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-}
-
-body.dark .card_header p,
-body.dark .date,
-body.dark .sub_txt {
-    color: var(--sub-text) !important;
-}
-
-body.dark .description,
-body.dark .info_box p,
-body.dark .card_header h4 {
-    color: var(--text-color);
-}
-
-body.dark .info_box.pain { background: var(--inner-box-bg); }
-body.dark .info_box.needs { background: var(--inner-box-blue); }
-
-body.dark .tag_label {
-    background: #48484a;
-    color: #ffffff;
-}
-
-/* 6. 섹션 02 (프로젝트 영역) */
-body.dark .container>.section02 {
-    background-color: #000000; /* 프로젝트 배경은 더 어둡게 */
-}
-
-body.dark .project>.card01,
-body.dark .project>.card02,
-body.dark .project>.card03 {
-    background: #2c2c2e;
-}
-
-body.dark .project-info>h3 { color: #ffffff; }
-body.dark .project-info>p { color: var(--sub-text); }
-body.dark .project-img { background-color: #3a3a3c; }
-
-/* 7. 푸터 */
-body.dark .container>.footer {
-    border-top: 1px solid var(--border-color);
-}
-
-body.dark .footer>p {
-    color: var(--sub-text);
-}
-
-/* 8. 인터뷰 & 페르소나 (추가하신 스타일 대응) */
-body.dark .interview-card { background: #2c2c2e; }
-body.dark .answer { color: var(--text-color); }
-body.dark .persona-card {
-    background: rgba(44, 44, 46, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
