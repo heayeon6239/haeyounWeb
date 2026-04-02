@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './home.jsx'
 import DetailPage from './detailPage.jsx'
+import OttPage from './ottPage.jsx'
+import Mega from './mega.jsx'
+
 import Header from './common/header.jsx'
 import Footer from './common/footer.jsx'
 
@@ -21,7 +24,9 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/detail' element={<DetailPage />} />
+        <Route path='/charang' element={<DetailPage />} />
+        <Route path='/ott' element={<OttPage />} />
+        <Route path='/mega' element={<Mega />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

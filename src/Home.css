@@ -57,22 +57,22 @@ body {
 
 /* 프로필 */
 .section01 {
-padding: 150px 0;
+  padding: 150px 0;
   /* 여러 방향에서 빛이 들어오는 느낌의 메쉬 그라데이션 */
   background-color: #1e253a;
-  background-image: 
+  background-image:
     /* 1. 왼쪽 상단: 더 딥한 블루 (범위를 70%로 넓힘) */
     radial-gradient(at 0% 0%, rgba(100, 150, 255, 0.6) 0px, transparent 70%),
-    
+
     /* 2. 오른쪽 상단: 화사한 퍼플 (범위를 60%로 조절) */
     radial-gradient(at 100% 0%, rgba(210, 160, 255, 0.7) 0px, transparent 60%),
-    
+
     /* 3. 하단 중앙: 싱그러운 민트 (대비감을 위해 채도를 높임) */
     radial-gradient(at 50% 100%, rgba(120, 255, 210, 0.5) 0px, transparent 80%),
-    
+
     /* 4. 오른쪽 하단: 은은한 핑크 한 방울 (더 극단적인 색감을 위해 추가) */
     radial-gradient(at 100% 100%, rgba(255, 200, 220, 0.4) 0px, transparent 50%);
-  
+
   display: flex;
   justify-content: center;
   width: 100%;
@@ -229,6 +229,7 @@ padding: 150px 0;
 .project>.card03 {
   margin-bottom: 40px;
   display: flex;
+  gap: 30px;
   background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
@@ -238,6 +239,7 @@ padding: 150px 0;
 }
 
 .project-img {
+  flex: 4;
   width: 458px;
   height: 400px;
   background-color: #e8e8ed;
@@ -246,7 +248,7 @@ padding: 150px 0;
 }
 
 .project-img .charang {
-  width: 458px;
+  width: 466px;
 }
 
 .project-img .ott {
@@ -254,11 +256,12 @@ padding: 150px 0;
 }
 
 .project-img .movie {
-  width: 459px;
+  width: 466px;
 }
 
 .project-info {
   padding: 60px;
+  flex: 5;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -434,27 +437,26 @@ padding: 150px 0;
   margin-top: 30px;
 }
 
-/* 2. 개별 아이콘 박스 (매우 중요!) */
+/* 2. 개별 아이콘 박스*/
 .stack_item {
   display: flex;
   flex-direction: column;
-  /* 아이콘 이미지 아래에 텍스트가 오도록 세로 정렬 */
   align-items: center;
   /* 이미지와 텍스트를 중앙 정렬 */
   justify-content: center;
   width: 100px;
-  /* 아이콘 하나당 차지할 너비 고정 (이게 있어야 정렬이 예쁨) */
+  width: 100px;
 }
 
 /* 3. 아이콘 이미지 크기 조절 */
-.stack_item img {
+.icon_list .stack_item img {
   width: 55px;
   height: 55px;
   object-fit: contain;
   margin-bottom: 10px;
 }
 
-/* 아이콘 글자 (호버 시에만 표시) */
+/* 아이콘 글자*/
 .stack_item p {
   font-size: 13px;
   color: #86868b;
@@ -468,4 +470,3 @@ padding: 150px 0;
 .stack_item:hover p {
   opacity: 1;
 }
-

@@ -1,0 +1,365 @@
+/* 1. 기본 폰트 및 초기화 */
+.container {
+    width: 100%;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Pretendard", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: -0.022em;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
+/* 2. 레이아웃 컨테이너 */
+.container .detail_info {
+    width: 100%;
+    max-width: 1100px;
+    padding: 120px 20px !important;
+}
+
+/* 3. 상단 텍스트 영역 */
+.container .detail_info>h2 {
+    font-size: 56px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1d1d1f;
+    letter-spacing: -0.04em;
+}
+
+.container .detail_info .info_comment_ott {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 80px;
+    color: #86868b;
+    /* Apple 서브 텍스트 컬러 */
+}
+
+.container .detail_info .info_comment_ott span {
+    color: #e01919;
+    /* Apple Blue */
+    font-weight: 600;
+}
+
+/* 4. 메인 정보 테이블 영역 (이미지 + 카드) */
+.container .detail_info .info_table_ott {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+/* 왼쪽*/
+.container .detail_info .info_table_ott .overlay {
+    flex: 6;
+    height: 986px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #f5f5f7;
+    /* Apple 실버 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f2f2f7;
+}
+
+.container .detail_info .info_table_ott .overlay img {
+    width: 101%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.12));
+}
+
+/* 오른쪽 카드 그리드 */
+.container .detail_info .info_table_ott .info_grid {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* .container .detail_info .info_table_ott .info_grid .top {
+    display: flex;
+    gap: ;
+} */
+
+/* 차랑차랑 이동 */
+.container .detail_info .info_charang {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 5. 정보 카드 개별 스타일 */
+.container .detail_info .info_itemcard {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container .detail_info .info_itemcard .value_sub {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 6. 카드 내부 상세 요소 (테이블, 스택, 버튼) */
+.container .detail_info .period_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container .detail_info .period_table th {
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+    font-weight: 600;
+    padding: 6px 0;
+}
+
+.container .detail_info .period_table td {
+    text-align: left;
+    font-size: 15px;
+    color: #1d1d1f;
+    font-weight: 600;
+    padding: 6px 0;
+}
+
+/* 전체 컨테이너: 아이콘 유닛들을 가로로 나열 */
+.container .detail_info .stack_images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    /* 가로 간격 15px, 세로(줄바꿈) 간격 20px */
+    margin-top: 15px;
+}
+
+/* 박스 + 이름 세트 */
+.container .detail_info .stack_images .stack_unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    width: 56px;
+    /* 유닛 전체 너비 고정 */
+}
+
+/* 사각형 아이콘 박스 */
+.container .detail_info .stack_images .stack_item {
+    width: 54px;
+    height: 54px;
+    background-color: #ffffff;
+    border: 1px solid #f2f2f7;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+/* 박스 내부 이미지 */
+.container .detail_info .stack_images .stack_item img {
+    max-width: 516px;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 박스 밑에 뜨는 이름 */
+.container .detail_info .stack_images .stack_name {
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0;
+    text-align: center;
+    word-break: keep-all;
+    /* 이름이 길어도 박스 너비 안에서 예쁘게 */
+}
+
+/* 호버 효과: 박스만 살짝 강조 */
+.container .detail_info .stack_images .stack_unit:hover .stack_item {
+    border-color: #d2d2d7;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.container .detail_info .stack_images .stack_unit:hover .stack_name {
+    opacity: 100;
+    font-weight: 400;
+    color: #86868b;
+}
+
+.link_buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.container .detail_info .link_btn {
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.container .detail_info .link_btn.site {
+    background: #e01919;
+    color: #ffffff;
+}
+
+.container .detail_info .link_btn.site:hover {
+    background: #e01919;
+}
+
+.container .detail_info .link_btn.git {
+    background: #1d1d1f;
+    color: #ffffff;
+}
+
+.container .detail_info .link_btn.notion {
+    border: 1px solid #d2d2d7;
+    color: #1d1d1f;
+}
+
+.container .detail_info .link_btn.notion:hover {
+    background: #f5f5f7;
+}
+
+/* 7. 하단 프론트/백 상세 설명 */
+.container .detail_info .info_content_ott {
+    background: #f5f5f7;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.container .detail_info .info_content_ott p {
+    color: #424245;
+    line-height: 1.8;
+    word-break: keep-all;
+    font-weight: 500;
+}
+
+/* 8. 반응형 레이아웃 */
+@media (max-width: 1024px) {
+    .container .detail_info .info_table_ott {
+        flex-direction: column;
+    }
+
+    .container .detail_info .info_table_ott .overlay {
+        width: 100%;
+        height: 400px;
+        flex: 6;
+    }
+
+    .container .detail_info .info_table_ott .info_grid {
+        width: 100%;
+        flex: 4;
+    }
+
+    .container .detail_info .info_content_ott {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 프로젝트 기능 설명 */
+.container .detail_info .info_project {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.container .detail_info .info_project .info_project_flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 개별 기능 카드 (전체 너비의 절반씩 차지) */
+.container .detail_info .info_project .info_project_flex .function_card {
+    flex: 1;
+    /* 두 카드가 동일한 너비를 가짐 */
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    /* 내부 요소는 위(이미지), 아래(글) 배치 */
+}
+
+/* 1. 이미지 박스 (상단) - 여백을 완전히 제거합니다 */
+.container .detail_info .info_project .info_project_flex .card_img_box {
+    width: 100% !important;
+    /* height: 100% !important; */
+    min-height: 296.16px;
+    /* 높이를 적절하게 고정하세요 */
+    background-color: #f5f5f7;
+    /* 배경색 */
+    display: block !important;
+    /* flex 대신 block으로 깔끔하게 */
+    padding: 0 !important;
+    /* ⭐ 기존 20px를 0으로 강제 수정 */
+    margin: 0 !important;
+    overflow: hidden !important;
+    /* 이미지가 둥근 모서리 밖으로 나가지 않게 함 */
+    border-radius: 24px 24px 0 0;
+    /* 상단 모서리만 둥글게 */
+}
+
+/* 2. 이미지 설정 - 박스에 꽉 채웁니다 */
+.container .detail_info .info_project .info_project_flex .card_img_box img {
+    width: 100% !important;
+    height: 100% !important;
+    /* ⭐ contain은 여백을 남깁니다. 무조건 cover를 쓰세요! */
+    object-fit: cover !important;
+
+    /* 그림자는 이미지가 박스를 꽉 채울 땐 안 보이는 게 더 깔끔합니다 */
+    filter: none !important;
+    transition: transform 0.5s ease;
+}
+
+/* 3. 텍스트 영역 (하단) - 이미지와 분리된 느낌을 줍니다 */
+.container .detail_info .info_project .info_project_flex .card_text_area {
+    padding: 30px !important;
+    background: #ffffff;
+    border-radius: 0 0 24px 24px;
+    /* 하단 모서리 둥글게 */
+}
+
+.container .detail_info .info_project .info_project_flex .card_text_area>p {
+    line-height: 1.8;
+    font-weight: 500;
+    color: #86868b;
+}
+
+/* 4. 카드 전체 설정 (혹시 모르니 확인) */
+.container .detail_info .info_project .info_project_flex .function_card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #f2f2f7;
+}

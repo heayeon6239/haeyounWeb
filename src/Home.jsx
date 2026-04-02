@@ -5,6 +5,13 @@ import "./Home.css";
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 부드럽게 쓰윽 올라가게 함
+        });
+    };
+
     // 다크모드 스위칭 함수
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
@@ -51,8 +58,8 @@ export default function Home() {
         { name: 'Eclipse', src: './img/Eclipse-icon.png' },
         { name: 'Gradle', src: './img/Gradle-icon.png' },
         { name: 'VisualStudio', src: './img/VisualStudio-icon.png' },
-        { name: 'Anaconda', src: './img/Anaconda-icon.png' },
-        { name: 'Matplotlib', src: './img/Matplotlib-icon.png' },
+        { name: 'Anaconda', src: './img/Anaconda-icon.jpg' },
+        { name: 'Matplotlib', src: './img/Matplotlib-icon.svg' },
         { name: 'Seaborn', src: './img/Seaborn-icon.png' },
 
     ]
@@ -61,7 +68,6 @@ export default function Home() {
     const designs = [
         { name: 'Illustrator', src: './img/Illustrator-icon.png' },
         { name: 'Photoshop', src: './img/Photoshop-icon.png' },
-        // { name: 'Indesign', src: './img/Indesign-icon.png' },
         { name: 'figma', src: './img/figma-icon.png' }
     ]
 
@@ -105,19 +111,24 @@ export default function Home() {
                             <p className="description">"UXUI디자인과 풀스텍개발을 할 수 있습니다."</p>
                         </div>
                         <div className="card_bottom_grid">
+                            {/* 학력 섹션 */}
                             <div className="info_box">
                                 <span className="tag_label">학력</span>
                                 <div className="item_list">
                                     <div className="item">
                                         <span className="date">2020.03 - 2026.02</span>
-                                        <p>대학교 전공</p>
+                                        <p className="main_txt">건국대학교 리빙디자인학과</p>
+                                        <p className="sub_txt">학사 졸업</p>
                                     </div>
                                     <div className="item">
                                         <span className="date">2016.03 - 2019.02</span>
-                                        <p>고등학교</p>
+                                        <p className="main_txt">서울여자고등학교</p>
+                                        <p className="sub_txt">졸업</p>
                                     </div>
                                 </div>
                             </div>
+
+                            {/* 교육 섹션 */}
                             <div className="info_box">
                                 <span className="tag_label">교육</span>
                                 <div className="item_list">
@@ -176,7 +187,7 @@ export default function Home() {
                                 Spring Boot와 MyBatis 기반의 REST API를 구축하여
                                 MySQL 데이터를 실시간으로 연동한 렌터카 관리 시스템을 Cloudtype에 배포
                             </p>
-                            <Link to={'/Detail'} className="detailPage">
+                            <Link to={'/charang'} className="detailPage" onClick={scrollToTop}>
                                 더 알아보기<i className="bi bi-arrow-right-short"></i>
                             </Link>
                         </div>
@@ -186,10 +197,11 @@ export default function Home() {
                         <div className="project-info">
                             <h3>OTT 프로젝트</h3>
                             <p>
-                                조별 프로젝트를 통해 OTT 웹 서비스의 메인 화면 및 콘텐츠 페이지를 기획하고,
-                                HTML5 시멘틱 마크업을 활용하여 전체 페이지 구조를 설계
+                                React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를
+                                구현하고, TMDB(Open Movie Database) API를 JSON 형식으로 연동해
+                                영화 · 드라마 데이터를 동적으로 표시하여 GitHub Pages에 배포
                             </p>
-                            <Link to={'/Detail'} className="detailPage">
+                            <Link to={'/ott'} className="detailPage" onClick={scrollToTop}>
                                 더 알아보기<i className="bi bi-arrow-right-short"></i>
                             </Link>
                         </div>
@@ -205,10 +217,11 @@ export default function Home() {
                         <div className="project-info">
                             <h3>영화관 메인 및 <br /> 예매 웹페이지 구현</h3>
                             <p>
-                                조별 프로젝트를 통해 OTT 웹 서비스의 메인 화면 및 콘텐츠 페이지를 기획하고,
-                                HTML5 시멘틱 마크업을 활용하여 전체 페이지 구조를 설계
+                                HTML5, CSS3, JavaScript를 활용해 영화관 메인 페이지와 예매 화면을
+                                구현하고, 시멘틱 마크업과 CSS 레이아웃으로 웹 표준에 맞게 구조를 설계하여 
+                                실제 영화 예매 사이트와 유사한 사용자 경험을 제공한 프로젝트
                             </p>
-                            <Link to={'/Detail'} className="detailPage">
+                            <Link to={'/mega'} className="detailPage" onClick={scrollToTop}>
                                 더 알아보기<i className="bi bi-arrow-right-short"></i>
                             </Link>
                         </div>
