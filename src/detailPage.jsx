@@ -36,16 +36,42 @@ export default function DetailPage() {
     // 카드 데이터 배열화
     const projectFunctions = [
         {
-            title: "예약 시스템",
-            img: "img/GIF/reservation.gif",
-            desc: "실시간 차량 가용 상태를 확인하고, 단 3번의 클릭만으로 신속한 예약이 가능합니다."
+            type: "프론트엔드",
+            title: "달력(FullCalendar API) 연동",
+            img: "img/home01.png",
+            desc: `FullCalendar API를 연동하여 날짜와 시간대 범위를 쉽게 선택할 수 있도록 UI를 구현했습니다.
+                    커스텀 스타일을 적용하고, 선택한 날짜와 시간대를 String 타입으로 추출해 예약 데이터로 넘길 수 있도록 처리했습니다.`
         },
         {
+            type: "백엔드 - 관리자페이지",
+            title: "차량관리(CRUD)",
+            img: "img/GIF/managerGIF/carDel.gif",
+            desc: `모델명·차량번호 등 검색 타입을 지정해 차량을 쉽게 조회할 수 있고, 필드명 클릭으로 오름차순/내림차순 정렬을 지원합니다.
+                차량 클릭 시 상세정보를 확인할 수 있으며, 실시간 예약 여부를 체크하여 예약이 없는 차량만 삭제할 수 있습니다.`
+        },
+        {
+            type: "백엔드 - 관리자페이지",
+            title: "회원관리(CRUD)",
+            img: "img/GIF/managerGIF/userSearch.gif",
+            desc: `회원 ID·이름으로 검색 타입을 지정해 회원을 쉽게 조회할 수 있고, 필드명 클릭으로 오름차순/내림차순 정렬을 지원합니다. 
+                 회원 클릭 시 상세정보를 확인할 수 있으며, 실시간 예약 여부를 체크하여 예약이 없는 회원만 삭제할 수 있습니다.`,
+        },
+        {
+            type: "백엔드 - 관리자페이지",
+            title: "예약관리(CRUD)",
+            img: "img/GIF/managerGIF/reservationSearch.gif",
+            desc: `예약코드·예약자 이름 등 검색 타입을 지정해 예약을 쉽게 조회할 수 있고, 필드명 클릭으로 오름차순/내림차순 정렬을 지원합니다. 
+                 예약 클릭 시 예약코드, 예약자, 예약차량 등의 상세정보를 한눈에 확인할 수 있습니다.
+                 실시간 예약 여부를 체크할 수 있으며, 모든 예약은 삭제할 수 있습니다.`,
+        },
+        {
+            type: "백엔드 - 관리자페이지",
             title: "관리자 대시보드",
             img: "img/GIF/admin.gif",
             desc: "차량 상태 및 예약 현황을 한눈에 파악하며, 데이터 시각화를 통해 효율적인 운영을 돕습니다."
         },
         {
+            type: "데이터 시각화",
             title: "로그인",
             img: "img/GIF/login.gif",
             desc: "사용자 인증 및 보안을 강화하여 안전한 서비스 이용 환경을 제공합니다."
@@ -60,11 +86,29 @@ export default function DetailPage() {
         setCurrentStep((prev) => (prev === 0 ? projectFunctions.length - 1 : prev - 1));
     };
 
+    const partSummary = {
+        front: {
+            title: '프론트엔드',
+            desc: 'React(Vite) 기반 메인 홈 레이아웃 구성 및 API 연동',
+            pills: ['신규/인기차량', 'FullCalendar API 연동', '최근 본 차량']
+        },
+        back: {
+            title: '백엔드',
+            desc: 'PHP + MySQL 기반 인증 및 예약 API 설계',
+            pills: ['차량/회원/예약 관리', 'CRUD', '검색']
+        },
+        data: {
+            title: '데이터 시각화',
+            desc: '예약 현황·이용률 차트 및 관리자 대시보드 구현',
+            pills: ['가입자수 그래프', '차종별 예약횟수']
+        },
+    };
+
     return (
         <div className="container">
             <div className="detail_info">
                 <h2>렌트카 웹사이트 개발</h2>
-                <p className="info_comment">
+                <p className="info_comment detail">
                     4인의 팀원과 함께 기획부터 배포까지 완수한 <span>풀스택 렌트카 예약 웹사이트</span>로<br />
                     사용자 중심의 UI와 안정적인 데이터 처리 로직을 구현했습니다.
                 </p>
@@ -98,19 +142,53 @@ export default function DetailPage() {
                         <div className="info_charang">
                             <h5>차량차랑</h5>
                             <h2>프로젝트 링크 이동하기</h2>
-                            <div className="link_buttons">
-                                <a href="https://port-0-charang2026-mma8g0s58d0aa22f.sel3.cloudtype.app/" target="_blank" rel="noreferrer" className="link_btn site">차랑차랑</a>
+                            <div className="links">
+                                <div className="link_buttons">
+                                    <a href="https://charang2025.mycafe24.com/" target="_blank" rel="noreferrer" className="link_btn charang">프론트엔드&nbsp;차랑차랑</a>
+                                </div>
+                                <div className="link_buttons">
+                                    <a href="https://port-0-charang2026-mma8g0s58d0aa22f.sel3.cloudtype.app/" target="_blank" rel="noreferrer" className="link_btn charang">백엔드&nbsp;차랑차랑</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="idpw">
+                            <div className="info_charang">
+                                {/* 일반 사용자 카드 */}
+                                <div className="account_card">
+                                    <div className="info_row">
+                                        <span className="label">ID</span>
+                                        <span className="value">test</span>
+                                    </div>
+                                    <div className="info_row">
+                                        <span className="label">PW</span>
+                                        <span className="value">1234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="info_charang">
+                                {/* 관리자 카드 */}
+                                <div className="account_card">
+                                    <div className="info_row">
+                                        <span className="label">ID</span>
+                                        <span className="value">admin</span>
+                                    </div>
+                                    <div className="info_row">
+                                        <span className="label">PW</span>
+                                        <span className="value">1234</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div className="info_itemcard">
-                            <h5>협업도구</h5>
+                            <h5>아카이브</h5>
                             <h2>프로젝트 관련 링크</h2>
                             <div className="link_buttons">
 
                                 <a href="https://github.com/jaykim1993/charang2026" target="_blank" rel="noreferrer" className="link_btn git">GitHub</a>
 
                                 <a href="https://10-32.notion.site/IMS-Backend-2fd7d4eb06e9806f9e3ed6c8303000d9" target="_blank" rel="noreferrer" className="link_btn notion">Notion</a>
+                                <a href="https://canva.link/tl4obp4pys7te6h" target="_blank" rel="noreferrer" className="link_btn notion">PPT</a>
                                 <a href="https://canva.link/kvjo5ei84vzqik3" target="_blank" rel="noreferrer" className="link_btn notion">PPT</a>
                             </div>
                         </div>
@@ -134,20 +212,29 @@ export default function DetailPage() {
 
                 {/* 상세 설명 섹션 */}
                 <div className="info_content">
-                    <div className="front">
+                    <div className="detail_content">
                         <h6>프론트엔드</h6>
                         <p>
-                            와이어프레임을 기반으로 HTML5, CSS3, JavaScript 및 React(Vite)를 활용하여 메인 화면, 목록, 상세 화면 등 UI 컴포넌트를 구현<br /><br />
-                            PHP와 MySQL을 연동하여 회원가입 및 로그인 기능을 개발하고, 데이터베이스 기반 사용자 인증 흐름을 적용<br /><br />
-                            UI 중심의 Management System 웹 애플리케이션을 팀 프로젝트 형태로 설계·구현·배포하는 웹 서비스 개발
+                            와이어프레임을 기반으로 HTML5, CSS3, JavaScript 및 React(Vite)를 활용하여 메인 화면, 목록, 상세 화면 등 UI 컴포넌트를 구현했습니다.<br />
+                            PHP와 MySQL을 연동하여 회원가입 및 로그인 기능을 개발하고, 데이터베이스 기반 사용자 인증 흐름을 적용하였습니다.<br />
+                            UI 중심의 Management System 웹 애플리케이션을 팀 프로젝트 형태로 설계·구현·배포(cafe24)하는 웹 서비스 개발입니다.
                         </p>
                     </div>
-                    <div className="back">
-                        <h6>백엔드</h6>
+                    <div className="detail_content">
+                        <h6>백엔드 고도화</h6>
                         <p>
-                            Spring Boot와 MyBatis를 활용한 백엔드 서버를 구축하고 MySQL 데이터베이스와 연동하여, 회원관리 및 데이터 처리 기능을 REST API 기반으로 구현<br /><br />
-                            Axios 기반 API 통신을 적용하여 React 프론트엔드와 Spring Boot 백엔드 간 데이터 연동 기능을 구현<br /><br />
+                            Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축하고 MySQL DBMS를 연동하여 ..
+                            회원관리 및 데이터 처리 기능을 REST API 기반으로 구현<br />
+                            Axios 기반 API 통신을 적용하여 React 프론트엔드와 Spring Boot 백엔드 간 데이터 연동 기능을 구현<br />
                             완성된 프로젝트는 Cloudtype 클라우드 환경에 배포하여 실제 웹 서비스 형태로 실행
+                        </p>
+                    </div>
+                    <div className="detail_content">
+                        <h6>데이터 시각화</h6>
+                        <p>
+                            기존 시스템의 비즈니스 로직을 분석하여 Python(Pandas)으로 대량의 더미데이터를 설계하고,
+                            Matplotlib/Seaborn을 활용한 통계 대시보드를 관리자 메뉴에 통합 구현. 데이터 수집, 정제,
+                            시각화 및 서비스 반영으로 이어지는 Full-Stack 데이터 파이프라인 역량 함양에 집중.
                         </p>
                     </div>
                 </div>
@@ -156,6 +243,35 @@ export default function DetailPage() {
                 <div className="info_project_slider">
                     <p className="info_project_sub">프로젝트 기능</p>
                     <h1>기능별 기여도</h1>
+                    <div className="impact">
+                        <div className="box">
+                            <h6>{partSummary.front.title}</h6>
+                            <p>{partSummary.front.desc}</p>
+                            <div className="minibox">
+                                {partSummary.front.pills.map((pill, i) => (
+                                    <span key={i}>{pill}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="box">
+                            <h6>{partSummary.back.title}</h6>
+                            <p>{partSummary.back.desc}</p>
+                            <div className="minibox">
+                                {partSummary.back.pills.map((pill, i) => (
+                                    <span key={i}>{pill}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="box">
+                            <h6>{partSummary.data.title}</h6>
+                            <p>{partSummary.data.desc}</p>
+                            <div className="minibox">
+                                {partSummary.data.pills.map((pill, i) => (
+                                    <span key={i}>{pill}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                     <div className="slider_wrapper">
                         {/* 이전 버튼*/}
                         <button className="slider_btn prev" onClick={handlePrev}>&lt;</button>
@@ -170,8 +286,9 @@ export default function DetailPage() {
                             </div>
 
                             <div className="card_text_area">
-                                <h2>{projectFunctions[currentStep].title}</h2>
-                                <p className="write">
+                                <h4>{projectFunctions[currentStep].type}</h4>
+                                <h1>{projectFunctions[currentStep].title}</h1>
+                                <p className="write" style={{ whiteSpace: 'pre-line', lineHeight: 1.8 }}>
                                     {projectFunctions[currentStep].desc}
                                 </p>
 

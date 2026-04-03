@@ -55,24 +55,17 @@ body {
   font-weight: 300;
 }
 
-/* 프로필 */
+/* ===========================
+   프로필 섹션
+=========================== */
 .section01 {
   padding: 150px 0;
-  /* 여러 방향에서 빛이 들어오는 느낌의 메쉬 그라데이션 */
   background-color: #1e253a;
   background-image:
-    /* 1. 왼쪽 상단: 더 딥한 블루 (범위를 70%로 넓힘) */
     radial-gradient(at 0% 0%, rgba(100, 150, 255, 0.6) 0px, transparent 70%),
-
-    /* 2. 오른쪽 상단: 화사한 퍼플 (범위를 60%로 조절) */
     radial-gradient(at 100% 0%, rgba(210, 160, 255, 0.7) 0px, transparent 60%),
-
-    /* 3. 하단 중앙: 싱그러운 민트 (대비감을 위해 채도를 높임) */
     radial-gradient(at 50% 100%, rgba(120, 255, 210, 0.5) 0px, transparent 80%),
-
-    /* 4. 오른쪽 하단: 은은한 핑크 한 방울 (더 극단적인 색감을 위해 추가) */
     radial-gradient(at 100% 100%, rgba(255, 200, 220, 0.4) 0px, transparent 50%);
-
   display: flex;
   justify-content: center;
   width: 100%;
@@ -85,105 +78,158 @@ body {
   text-align: center;
 }
 
+.section01 .inner .section-title {
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fefefe;
+}
+
 .section-title {
   font-size: 45px;
   font-weight: 800;
   text-align: center;
   margin-bottom: 25px;
+  color: #333;
+}
+.section03 .inner .section_comment {
+  font-size: 25px;
+  /* font-weight: 800; */
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+.section03 .inner .section_comment > span {
+  color: #0071e3;
 }
 
-.section_comment {
-  font-size: 20px;
-}
-
-.section_comment>span {
-  color: #007fff;
-}
-
-.profile_main_card {
-  /* 1. 반투명한 배경 */
+/* 메인 카드 */
+.section01 .inner .profile_main_card {
   background: rgba(255, 255, 255, 0.2);
-
-  /* 2. ★ 핵심: 뒤 배경 뿌옇게 처리 (필터) */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  /* 사파리 브라우저 지원 */
-
-  /* 3. 테두리와 그림자로 입체감 주기 */
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* 은은한 유리 테두리 */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  /* 부드러운 그림자 */
-
-  /* 기존 스타일 유지 */
   border-radius: 60px;
-  padding: 60px;
+  padding: 50px 60px;
 }
 
-.card_header {
+/* 프로필 헤더 — 컴팩트 */
+.section01 .inner .profile_main_card .card_header {
   text-align: center;
-  margin-bottom: 50px;
-  /* background: linear-gradient(...) <- 이 부분을 삭제하거나 아래처럼 transparent로 변경 */
+  margin-bottom: 28px;
   background: transparent;
-  padding: 20px;
+  padding: 10px 20px;
   width: 100%;
-  /* 기존 500px 고정보다 100%가 더 자연스럽습니다 */
   border-radius: 20px;
 }
 
-.profile_img>img {
-  width: 150px;
-  height: 150px;
+.section01 .inner .profile_main_card .card_header .profile_img > img {
+  width: 100px;
+  height: 100px;
   background: #d3dde6;
   border-radius: 50%;
-  margin: 0 auto 25px;
+  margin: 0 auto 16px;
 }
 
 .card_header h4 {
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 12px;
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fefefe;
 }
 
-.card_header p {
-  font-size: 15px;
-  color: #86868b;
-  margin-bottom: 15px;
-}
-
-.description {
+.section01 .inner .profile_main_card .card_header p {
   font-size: 16px;
-  font-weight: 600;
-  color: #1d1d1f;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
 }
 
-.card_bottom_grid {
+.section01 .inner .profile_main_card .card_header .description {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 헤더 구분선 */
+.section01 .inner .profile_main_card .card_divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 32px;
+}
+
+/* 타임라인 2열 그리드 */
+.section01 .inner .profile_main_card .card_bottom_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 40px;
+  text-align: left;
 }
 
-.info_box {
-  padding: 30px;
-  border-radius: 40px;
-  /* 기존 #f5f5f7 대신 반투명한 흰색 사용 */
-  background: rgba(245, 245, 247, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* 카테고리 헤더 */
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.tag_label {
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header .tl_group_line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header .tag_label {
   display: inline-block;
-  padding: 5px 15px;
-  background: #ffffff;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 800;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  color: #5a5a8a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+/* 타임라인 아이템 */
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_item .tl_dot_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  flex-shrink: 0;
+}
+
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_item .tl_dot_col .tl_dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_item .tl_dot_col .tl_connector {
+  width: 1px;
+  flex: 1;
+  min-height: 30px;
+  margin-top: 4px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_item .tl_content {
+  flex: 1;
 }
 
 .item {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .item:last-child {
@@ -192,25 +238,27 @@ body {
 
 .date {
   display: block;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
-  color: #86868b;
-  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
 }
 
-.info_box p {
-  font-size: 17px;
+.main_txt {
+  font-size: 16px;
   font-weight: 700;
-  color: #1d1d1f;
+  color: #fefefe;
   line-height: 1.4;
+  margin: 0 0 4px;
 }
 
 .sub_txt {
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: #6e6e73 !important;
-  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
 }
+
 
 /* 프로젝트 */
 .container>.section02 {

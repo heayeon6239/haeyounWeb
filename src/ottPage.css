@@ -32,19 +32,8 @@ h2 {
     letter-spacing: -0.04em;
 }
 
-.container .detail_info .info_comment_ott {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 80px;
-    color: #86868b;
-    /* Apple 서브 텍스트 컬러 */
-}
-
-.container .detail_info .info_comment_ott span {
+.container .detail_info .info_comment.ott span {
     color: #e01919;
-    /* Apple Blue */
     font-weight: 600;
 }
 
@@ -61,7 +50,7 @@ h2 {
 /* 왼쪽*/
 .container .detail_info .info_table_ott .overlay {
     flex: 6;
-    height: 986px;
+    height: 1113px;
     border-radius: 30px;
     overflow: hidden;
     background-color: #f5f5f7;
@@ -89,11 +78,6 @@ h2 {
     gap: 16px;
 }
 
-/* .container .detail_info .info_table_ott .info_grid .top {
-    display: flex;
-    gap: ;
-} */
-
 /* 차랑차랑 이동 */
 .container .detail_info .info_charang {
     background: #ffffff;
@@ -104,6 +88,27 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 내부 정보 정렬 */
+.info_row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.label {
+    color: #86868b;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.value {
+    color: #1d1d1f;
+    font-weight: 600;
+    font-family: 'monospace';
+    font-size: 14px;
 }
 
 /* 5. 정보 카드 개별 스타일 */
@@ -217,14 +222,6 @@ h2 {
     margin-top: 5px;
 }
 
-.container .detail_info .link_btn {
-    padding: 10px 22px;
-    border-radius: 40px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
 .container .detail_info .link_btn.site {
     background: #e01919;
     color: #ffffff;
@@ -237,15 +234,6 @@ h2 {
 .container .detail_info .link_btn.git {
     background: #1d1d1f;
     color: #ffffff;
-}
-
-.container .detail_info .link_btn.notion {
-    border: 1px solid #d2d2d7;
-    color: #1d1d1f;
-}
-
-.container .detail_info .link_btn.notion:hover {
-    background: #f5f5f7;
 }
 
 /* 7. 하단 프론트/백 상세 설명 */

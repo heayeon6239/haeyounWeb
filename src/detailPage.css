@@ -15,14 +15,15 @@ h2 {
     padding-bottom: 20px;
 }
 
-h1{
+h1 {
     text-align: left;
     padding-bottom: 20px;
 }
-.info_project_sub{
+
+.info_project_sub {
     text-align: left;
     font-weight: 700;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 /* 2. 레이아웃 컨테이너 */
@@ -46,15 +47,13 @@ h1{
     font-size: 22px;
     font-weight: 500;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.8;
     margin-bottom: 80px;
     color: #86868b;
-    /* Apple 서브 텍스트 컬러 */
 }
 
-.container .detail_info .info_comment span {
+.container .detail_info .info_comment.detail span {
     color: #0071e3;
-    /* Apple Blue */
     font-weight: 600;
 }
 
@@ -71,10 +70,10 @@ h1{
 /* 왼쪽*/
 .container .detail_info .info_table .overlay {
     flex: 6;
-    height: 1309px;
+    height: 1436px;
     border-radius: 30px;
     overflow: hidden;
-    background-color: #f5f5f7;
+    background-color: #333;
     /* Apple 실버 배경 */
     display: flex;
     justify-content: center;
@@ -114,6 +113,42 @@ h1{
     display: flex;
     flex-direction: column;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container .detail_info .idpw {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.container .detail_info .idpw .info_charang {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 내부 정보 정렬 */
+.info_row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.label {
+    color: #86868b;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.value {
+    color: #1d1d1f;
+    font-weight: 600;
+    font-family: 'monospace';
+    font-size: 14px;
 }
 
 /* 5. 정보 카드 개별 스타일 */
@@ -221,9 +256,12 @@ h1{
     color: #86868b;
 }
 
-.link_buttons {
+.links {
     display: flex;
     gap: 12px;
+}
+
+.link_buttons {
     margin-top: 5px;
 }
 
@@ -235,12 +273,12 @@ h1{
     transition: 0.2s ease;
 }
 
-.container .detail_info .link_btn.site {
+.container .detail_info .link_btn.charang {
     background: #0071e3;
     color: #ffffff;
 }
 
-.container .detail_info .link_btn.site:hover {
+.container .detail_info .link_btn.charang:hover {
     background: #0077ed;
 }
 
@@ -256,37 +294,6 @@ h1{
 
 .container .detail_info .link_btn.notion:hover {
     background: #f5f5f7;
-}
-
-/* 7. 하단 프론트/백 상세 설명 */
-.container .detail_info .info_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    width: 100%;
-    border-top: 1px solid #f2f2f7;
-    padding-top: 80px;
-}
-
-.container .detail_info .info_content .front,
-.container .detail_info .info_content .back {
-    background: #f5f5f7;
-    border-radius: 30px;
-    padding: 50px;
-}
-
-.container .detail_info .info_content h6 {
-    font-size: 24px;
-    color: #1d1d1f;
-    margin-bottom: 24px;
-    font-weight: 700;
-}
-
-.container .detail_info .info_content p {
-    color: #424245;
-    line-height: 1.8;
-    font-size: 17px;
-    word-break: keep-all;
 }
 
 /* 8. 반응형 레이아웃 */
@@ -311,17 +318,110 @@ h1{
     }
 }
 
-/* --- 버튼이 이미지 위로 올라오는 100% 슬라이더 --- */
-
-.info_project_slider {
+/* 7. 하단 프론트/백 상세 설명 */
+.container .detail_info .info_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
     width: 100%;
-    margin: 80px auto 0 auto;
+    border-top: 1px solid #f2f2f7;
+    padding:  80px 0;
+}
+
+.container .detail_info .info_content .detail_content {
+    /* background: #f5f5f7;
+    border-radius: 30px; */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7ee;
+}
+.container .detail_info .info_content .detail_content:last-child {
+    border-bottom: none;
+}
+/* .container .detail_info .info_content .content {
+    background: #f5f5f7;
+    border-radius: 30px;
+    padding: 50px;
+} */
+
+.container .detail_info .info_content h6 {
+    font-size: 24px;
+    color: #1d1d1f;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.container .detail_info .info_content p {
+    color: #424245;
+    line-height: 1.8;
+    font-size: 15px;
+    word-break: keep-all;
+}
+
+/* --- 버튼이 이미지 위로 올라오는 100% 슬라이더 --- */
+.info_project_slider {
+    border-top: 1px solid #f2f2f7;
+    padding-top: 80px;
+}
+
+.info_project_slider .impact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.info_project_slider .impact .box {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info_project_slider .impact .box.on {
+    border: 2px solid #1d1d1f;
+}
+
+.info_project_slider .impact .box h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.info_project_slider .impact .box p {
+    font-size: 15px;
+    color: #6e6e73;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.info_project_slider .impact .box .minibox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.info_project_slider .impact .box .minibox span {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #f5f5f7;
+    color: #444;
+    border: 1px solid #e8e8ed;
 }
 
 .slider_wrapper {
-    position: relative; /* 버튼 배치의 기준점 */
+    position: relative;
+    /* 버튼 배치의 기준점 */
     width: 100%;
-    max-width: 1100px; /* 기존 detail_info와 너비 맞춤 */
+    max-width: 1100px;
+    /* 기존 detail_info와 너비 맞춤 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,6 +430,7 @@ h1{
 /* 카드 너비를 100%로 확장 */
 .slider_wrapper .function_card {
     width: 100%;
+    min-height: 807px;
     flex: none !important;
     background: #ffffff;
     border-radius: 24px;
@@ -340,7 +441,8 @@ h1{
 
 .slider_wrapper .card_img_box {
     width: 100%;
-    height: 550px; /* 100% 너비에 맞춰 높이도 조금 키움 */
+    height: 550px;
+    /* 100% 너비에 맞춰 높이도 조금 키움 */
     background-color: #f5f5f7;
     margin: 0 !important;
     padding: 0 !important;
@@ -355,7 +457,8 @@ h1{
 /* 버튼을 이미지 위 양옆으로 배치 */
 .slider_btn {
     position: absolute;
-    top: 275px; /* 이미지 영역(550px)의 정중앙 */
+    top: 275px;
+    /* 이미지 영역(550px)의 정중앙 */
     transform: translateY(-50%);
     z-index: 10;
     width: 50px;
@@ -393,10 +496,10 @@ h1{
     .slider_wrapper .card_img_box {
         height: 350px;
     }
+
     .slider_btn {
         top: 175px;
         width: 40px;
         height: 40px;
     }
 }
-

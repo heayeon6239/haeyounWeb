@@ -32,24 +32,13 @@ h2 {
     letter-spacing: -0.04em;
 }
 
-.container .detail_info .info_comment_ott {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 80px;
-    color: #86868b;
-    /* Apple 서브 텍스트 컬러 */
-}
-
-.container .detail_info .info_comment_ott span {
-    color: #e01919;
-    /* Apple Blue */
+.container .detail_info .info_comment.mega span {
+    color: #5820dc;
     font-weight: 600;
 }
 
 /* 4. 메인 정보 테이블 영역 (이미지 + 카드) */
-.container .detail_info .info_table_ott {
+.container .detail_info .info_table_mega {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -59,13 +48,12 @@ h2 {
 }
 
 /* 왼쪽*/
-.container .detail_info .info_table_ott .overlay {
+.container .detail_info .info_table_mega .overlay {
     flex: 6;
-    height: 986px;
+    height: 901px;
     border-radius: 30px;
     overflow: hidden;
     background-color: #f5f5f7;
-    /* Apple 실버 배경 */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -74,25 +62,20 @@ h2 {
     border: 1px solid #f2f2f7;
 }
 
-.container .detail_info .info_table_ott .overlay img {
-    width: 101%;
+.container .detail_info .info_table_mega .overlay img {
+    width: 100%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.12));
 }
 
 /* 오른쪽 카드 그리드 */
-.container .detail_info .info_table_ott .info_grid {
+.container .detail_info .info_table_mega .info_grid {
     flex: 4;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-
-/* .container .detail_info .info_table_ott .info_grid .top {
-    display: flex;
-    gap: ;
-} */
 
 /* 차랑차랑 이동 */
 .container .detail_info .info_charang {
@@ -226,26 +209,17 @@ h2 {
 }
 
 .container .detail_info .link_btn.site {
-    background: #e01919;
+    background: #5820dc;
     color: #ffffff;
 }
 
 .container .detail_info .link_btn.site:hover {
-    background: #e01919;
+    background: #4c1ac1;
 }
 
 .container .detail_info .link_btn.git {
     background: #1d1d1f;
     color: #ffffff;
-}
-
-.container .detail_info .link_btn.notion {
-    border: 1px solid #d2d2d7;
-    color: #1d1d1f;
-}
-
-.container .detail_info .link_btn.notion:hover {
-    background: #f5f5f7;
 }
 
 /* 7. 하단 프론트/백 상세 설명 */
@@ -264,17 +238,17 @@ h2 {
 
 /* 8. 반응형 레이아웃 */
 @media (max-width: 1024px) {
-    .container .detail_info .info_table_ott {
+    .container .detail_info .info_table_mega {
         flex-direction: column;
     }
 
-    .container .detail_info .info_table_ott .overlay {
+    .container .detail_info .info_table_mega .overlay {
         width: 100%;
         height: 400px;
         flex: 6;
     }
 
-    .container .detail_info .info_table_ott .info_grid {
+    .container .detail_info .info_table_mega .info_grid {
         width: 100%;
         flex: 4;
     }
@@ -299,7 +273,6 @@ h2 {
 /* 개별 기능 카드 (전체 너비의 절반씩 차지) */
 .container .detail_info .info_project .info_project_flex .function_card {
     flex: 1;
-    /* 두 카드가 동일한 너비를 가짐 */
     background: #ffffff;
     border-radius: 24px;
     overflow: hidden;
@@ -307,19 +280,17 @@ h2 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
-    /* 내부 요소는 위(이미지), 아래(글) 배치 */
 }
 
 /* 1. 이미지 박스 (상단) - 여백을 완전히 제거합니다 */
 .container .detail_info .info_project .info_project_flex .card_img_box {
     width: 100% !important;
-    /* height: 100% !important; */
+    max-height: 296.15px;
     min-height: 296.16px;
     /* 높이를 적절하게 고정하세요 */
     background-color: #f5f5f7;
-    /* 배경색 */
-    display: block !important;
-    /* flex 대신 block으로 깔끔하게 */
+    display: flex !important;
+    justify-content: center;
     padding: 0 !important;
     /* ⭐ 기존 20px를 0으로 강제 수정 */
     margin: 0 !important;
@@ -330,13 +301,11 @@ h2 {
 }
 
 /* 2. 이미지 설정 - 박스에 꽉 채웁니다 */
-.container .detail_info .info_project .info_project_flex .card_img_box img {
-    width: 100% !important;
-    height: 100% !important;
+.container .detail_info .info_project .info_project_flex .card_img_box .mega_img {
+    width: 140% !important;
+    height: 108% !important;
     /* ⭐ contain은 여백을 남깁니다. 무조건 cover를 쓰세요! */
     object-fit: cover !important;
-
-    /* 그림자는 이미지가 박스를 꽉 채울 땐 안 보이는 게 더 깔끔합니다 */
     filter: none !important;
     transition: transform 0.5s ease;
 }

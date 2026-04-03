@@ -19,8 +19,8 @@ export default function OttPage() {
     return (
         <div className="container">
             <div className="detail_info">
-                <h2>OTT 웹페이지 구축</h2>
-                <p className="info_comment_ott">
+                <h2>OTT 미니 프로젝트</h2>
+                <p className="info_comment ott">
                     <span>TMDB API 연동</span>을 통해 실시간 콘텐츠 데이터를 동적으로 구현한 4인 팀 프로젝트로<br />
                     로그인부터 콘텐츠 상세 페이지까지 완성도 높은 <span>OTT 웹 서비스</span>를 구축했습니다.
                 </p>
@@ -28,7 +28,7 @@ export default function OttPage() {
                 <div className="info_table_ott">
                     {/* 왼쪽 */}
                     <div className="overlay">
-                        <img src="/img/ottScreen.png" alt="차랑차랑" />
+                        <img src="/img/ottScreen.png" alt="ott" />
                     </div>
 
                     {/* 오른쪽 */}
@@ -44,7 +44,7 @@ export default function OttPage() {
                             <h2>프로젝트 기간</h2>
                             <table className="period_table">
                                 <tbody>
-                                    <tr><td>2025.12.01 - 12.31</td></tr>
+                                    <tr><td>2025.11.10 - 11.13</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -54,6 +54,20 @@ export default function OttPage() {
                             <h2>프로젝트 링크 이동하기</h2>
                             <div className="link_buttons">
                                 <a href="https://heayeon6239.github.io/ott_project2025/" target="_blank" rel="noreferrer" className="link_btn site">OTT</a>
+                            </div>
+                        </div>
+
+                        <div className="info_charang">
+                            {/* 일반 사용자 카드 */}
+                            <div className="account_card">
+                                <div className="info_row">
+                                    <span className="label">ID</span>
+                                    <span className="value">test</span>
+                                </div>
+                                <div className="info_row">
+                                    <span className="label">PW</span>
+                                    <span className="value">1234</span>
+                                </div>
                             </div>
                         </div>
 
@@ -87,9 +101,9 @@ export default function OttPage() {
                     <div className="front">
                         <h2>상세설명</h2>
                         <p>
-                            React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를
-                                구현하고, TMDB(Open Movie Database) API를 JSON 형식으로 연동해
-                                영화 · 드라마 데이터를 동적으로 표시하여 GitHub Pages에 배포
+                            React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를 구현했습니다.<br/>
+                            표준 Fetch API를 활용하여 TMDB(Open Movie Database) API를 JSON 형식으로 연동해
+                            영화 · 드라마 데이터를 동적으로 표시하여 GitHub Pages에 배포했습니다.
                         </p>
                     </div>
                 </div>
@@ -122,7 +136,7 @@ export default function OttPage() {
                             <div className="card_text_area">
                                 <h2>장르별 작품</h2>
                                 <p className="write">
-                                    TMDB API 데이터를 장르별로 분류한<br/>
+                                    TMDB API 데이터를 장르별로 분류한<br />
                                     각 작품들을 슬라이드를 통해 쉽게 확인할 수 있으며,<br />
                                     모두보기 클릭시 해당 장르의 모든 콘텐츠를 한눈에 볼 수 있습니다.
                                 </p>

@@ -8,27 +8,23 @@ export default function Mega() {
         { name: 'HTML', src: './img/html-icon.png' },
         { name: 'CSS', src: './img/css-icon.png' },
         { name: 'Java Script', src: './img/JavaScript-icon.png' },
-        { name: 'React', src: './img/ReactVite-icon.svg' },
-        { name: 'VisualStudio', src: './img/VisualStudio-icon.png' },
-        { name: 'Illustrator', src: './img/Illustrator-icon.png' },
-        { name: 'Photoshop', src: './img/Photoshop-icon.png' },
-        { name: 'figma', src: './img/figma-icon.png' }
-
+        { name: 'VisualStudio', src: './img/VisualStudio-icon.png' }
     ]
 
     return (
         <div className="container">
             <div className="detail_info">
-                <h2>OTT 웹페이지 구축</h2>
-                <p className="info_comment_ott">
-                    <span>TMDB API 연동</span>을 통해 실시간 콘텐츠 데이터를 동적으로 구현한 4인 팀 프로젝트로<br />
-                    로그인부터 콘텐츠 상세 페이지까지 완성도 높은 <span>OTT 웹 서비스</span>를 구축했습니다.
+                <h2>MEGABOX <br /> 메인/예매 사이트</h2>
+                <p className="info_comment mega">
+                    HTML5, CSS3, Java Script를 활용해 영화관 메인 페이지와 예매 화면을 구현하고,<br />
+                    <span>시멘틱 마크업</span>과 <span>CSS 레이아웃</span>으로 웹 표준에 맞게 구조를 설계하여<br />
+                    실제 영화 예매 사이트와 유사한 사용자 경험을 제공했습니다.
                 </p>
 
-                <div className="info_table_ott">
+                <div className="info_table_mega">
                     {/* 왼쪽 */}
                     <div className="overlay">
-                        <img src="/img/ottScreen.png" alt="차랑차랑" />
+                        <img src="/img/megaScreen.png" alt="메가박스" />
                     </div>
 
                     {/* 오른쪽 */}
@@ -37,23 +33,23 @@ export default function Mega() {
 
                         <div className="info_itemcard">
                             <h2>참여 인원</h2>
-                            <span className="value_sub">팀 프로젝트(4인)</span>
+                            <span className="value_sub">팀 프로젝트(2인)</span>
                         </div>
 
                         <div className="info_itemcard">
                             <h2>프로젝트 기간</h2>
                             <table className="period_table">
                                 <tbody>
-                                    <tr><td>2025.12.01 - 12.31</td></tr>
+                                    <tr><td>2025.10.15 - 10.17</td></tr>
                                 </tbody>
                             </table>
                         </div>
                         {/* </div> */}
                         <div className="info_charang">
-                            <h5>OTT 프로젝트</h5>
+                            <h5>MEGABOX 메인/예매 사이트</h5>
                             <h2>프로젝트 링크 이동하기</h2>
                             <div className="link_buttons">
-                                <a href="https://heayeon6239.github.io/ott_project2025/" target="_blank" rel="noreferrer" className="link_btn site">OTT</a>
+                                <a href="https://heayeon6239.github.io/megacompelete/" target="_blank" rel="noreferrer" className="link_btn site">MEGABOX</a>
                             </div>
                         </div>
 
@@ -61,7 +57,7 @@ export default function Mega() {
                             <h5>협업도구</h5>
                             <h2>프로젝트 관련 링크</h2>
                             <div className="link_buttons">
-                                <a href="https://github.com/heayeon6239/ott_project2025" target="_blank" rel="noreferrer" className="link_btn git">GitHub</a>
+                                <a href="https://github.com/heayeon6239/megacompelete" target="_blank" rel="noreferrer" className="link_btn git">GitHub</a>
                             </div>
                         </div>
 
@@ -87,9 +83,10 @@ export default function Mega() {
                     <div className="front">
                         <h2>상세설명</h2>
                         <p>
-                            React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를
-                                구현하고, TMDB(Open Movie Database) API를 JSON 형식으로 연동해
-                                영화 · 드라마 데이터를 동적으로 표시하여 GitHub Pages에 배포
+                            JavaScript를 사용하여 영화 선택 및 페이지 전환과 같은 사용자 이벤트를 처리하고,
+                            동적인 UI 요소를 구현하여 실제 영화 예매 사이트와 유사한 사용자 경험을 제공합니다.
+                            HTML5, CSS3, JavaScript를 활용해 영화관 메인 페이지와 상단 네비게이션 메뉴의 빠른 예매 화면을
+                            구현하고, 시멘틱 마크업과 CSS 레이아웃으로 웹 표준에 맞게 구조를 설계했습니다.
                         </p>
                     </div>
                 </div>
@@ -100,31 +97,44 @@ export default function Mega() {
                     <h1>기능별 기여도</h1>
                     <div className="info_project_flex">
 
-                        {/* 랭킹 */}
+                        {/* 메인 */}
                         <div className="function_card">
                             <div className="card_img_box">
-                                <img src="img/ottScreen01.png" alt="랭킹" />
+                                <img src="img/mega01.png" alt="메인" className="mega_img" />
                             </div>
                             <div className="card_text_area">
-                                <h2>TOP 10 콘텐츠</h2>
+                                <h2>메인 홈 구성</h2>
                                 <p className="write">
-                                    메인페이지에서 인터벌 로직을 적용한 자동 재생 배너를 통해<br />
-                                    현재 TOP 10 콘텐츠의 순위와 정보를 바로 파악할 수 있습니다.
+                                    호버 효과를 활용한 오버레이 레이아웃을 구현하여<br />
+                                    해당 영화의 상세 줄거리와 관람 평점을 확인할 수 있습니다.
                                 </p>
                             </div>
                         </div>
 
-                        {/* 카테고리별 추천*/}
+                        {/* 슬라이드 */}
                         <div className="function_card">
                             <div className="card_img_box">
-                                <img src="img/ottScreen03.png" alt="카테고리" />
+                                <img src="img/mega02.png" alt="슬라이드" className="mega_img" />
                             </div>
                             <div className="card_text_area">
-                                <h2>장르별 작품</h2>
+                                <h2>자동 재생 배너</h2>
                                 <p className="write">
-                                    TMDB API 데이터를 장르별로 분류한<br/>
-                                    각 작품들을 슬라이드를 통해 쉽게 확인할 수 있으며,<br />
-                                    모두보기 클릭시 해당 장르의 모든 콘텐츠를 한눈에 볼 수 있습니다.
+                                    setInterval 로직을 활용한 실시간 자동 재생 배너를 통해<br />
+                                    다양한 혜택 정보를 제공합니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* 예매 */}
+                        <div className="function_card">
+                            <div className="card_img_box">
+                                <img src="img/mega03.png" alt="예매" className="mega_img" />
+                            </div>
+                            <div className="card_text_area">
+                                <h2>예약 인원 선택</h2>
+                                <p className="write">
+                                    인원 선택 로직을 통해 실시간 예매 인원을 확인할 수 있으며<br />
+                                    경로 및 우대 조건 선택 시 안내 모달을 활용하여 정보를 전달합니다.
                                 </p>
                             </div>
                         </div>
