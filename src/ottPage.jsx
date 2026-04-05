@@ -40,7 +40,7 @@ export default function OttPage() {
                 <div className="info_table_ott">
                     {/* 왼쪽 */}
                     <div className="overlay">
-                        <img src="/img/ottScreen.png" alt="ott" />
+                        <img src="./img/ottScreen.png" alt="ott" />
                     </div>
 
                     {/* 오른쪽 */}

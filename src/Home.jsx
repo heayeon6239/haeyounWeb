@@ -96,7 +96,7 @@ export default function Home() {
                         {/* 상단 프로필 헤더 */}
                         <div className="card_header">
                             <div className="profile_img">
-                                <img src="/img/profile_img.png" alt="프로필사진" />
+                                <img src="./img/profile_img.png" alt="프로필사진" />
                             </div>
                             <h4>정해연</h4>
                             <p>2000.11.24</p>

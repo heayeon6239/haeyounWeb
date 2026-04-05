@@ -37,7 +37,7 @@ export default function Mega() {
                 <div className="info_table_mega">
                     {/* 왼쪽 */}
                     <div className="overlay">
-                        <img src="/img/megaScreen.png" alt="메가박스" />
+                        <img src="./img/megaScreen.png" alt="메가박스" />
                     </div>
 
                     {/* 오른쪽 */}
