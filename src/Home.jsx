@@ -26,16 +26,6 @@ export default function Home() {
         }
     }, [isDarkMode]);
 
-    // body 태그에 strawberry 클래스 적용/해제
-    // useEffect(() => {
-    //     if (isDarkMode) {
-    //         // CSS에 작성하신 .strawberry 스타일을 불러오기 위해 이름을 맞춥니다.
-    //         document.body.classList.add("strawberry");
-    //     } else {
-    //         document.body.classList.remove("strawberry");
-    //     }
-    // }, [isDarkMode]);
-
     // 언어
     const lans = [
         { name: 'HTML', src: './img/html-icon.png' },
@@ -123,6 +113,7 @@ export default function Home() {
                             {/* 학력 */}
                             <div className="tl_group">
                                 <div className="tl_group_header">
+                                    {/* <div className="tl_group_line" /> */}
                                     <span className="tag_label">학력</span>
                                     <div className="tl_group_line" />
                                 </div>
@@ -154,6 +145,7 @@ export default function Home() {
                             {/* 교육 */}
                             <div className="tl_group">
                                 <div className="tl_group_header">
+                                    {/* <div className="tl_group_line" /> */}
                                     <span className="tag_label">교육</span>
                                     <div className="tl_group_line" />
                                 </div>

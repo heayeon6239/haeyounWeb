@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import "./header.css";
 
 export default function Header() {
@@ -14,10 +15,10 @@ export default function Header() {
         < header className="header" >
             <Link to={'/'} className="logo" onClick={scrollToTop} >&lt; HAE YOUN / &gt;</Link>
             <div className="navi">
-                <a href="#profile">Profile</a>
-                <a href="#tool">Tool</a>
-                <a href="#project">Projects</a>
-                <a href="#">Contact</a>
+                <HashLink smooth to="/#profile">Profile</HashLink>
+                <HashLink smooth to="/#tool">Tool</HashLink>
+                <HashLink smooth to="/#project">Projects</HashLink>
+                {/* <a href="#">Contact</a> */}
             </div>
         </header >
     )

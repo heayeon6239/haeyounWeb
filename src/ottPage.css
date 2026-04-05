@@ -222,12 +222,12 @@ h2 {
     margin-top: 5px;
 }
 
-.container .detail_info .link_btn.site {
+.container .detail_info .link_btn.ott {
     background: #e01919;
     color: #ffffff;
 }
 
-.container .detail_info .link_btn.site:hover {
+.container .detail_info .link_btn.ott:hover {
     background: #e01919;
 }
 
@@ -275,13 +275,81 @@ h2 {
 /* 프로젝트 기능 설명 */
 .container .detail_info .info_project {
     width: 100%;
-    margin-top: 80px;
+    border-top: 1px solid #f2f2f7;
+    padding-top: 80px;
 }
 
+/* 기능별 기여도 */
 .container .detail_info .info_project .info_project_flex {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.container .detail_info .info_project .box{
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    border: 1px solid #f2f2f7;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 40px;
+}
+
+.container .detail_info .info_project .box h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.container .detail_info .info_project .box .box_desc_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.container .detail_info .info_project .box .box_desc_list .box_desc_item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.container .detail_info .info_project .box .box_desc_list .box_desc_item .box_desc_dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6e6e73;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.container .detail_info .info_project .box .box_desc_list .box_desc_item>p {
+    font-size: 15px;
+    color: #6e6e73;
+    line-height: 1.7;
+    margin: 0;
+    word-break: keep-all;
+}
+
+.container .detail_info .info_project .box .minibox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.container .detail_info .info_project .box .minibox span {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #f5f5f7;
+    color: #444;
+    border: 1px solid #e8e8ed;
 }
 
 /* 개별 기능 카드 (전체 너비의 절반씩 차지) */

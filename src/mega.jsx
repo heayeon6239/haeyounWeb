@@ -11,6 +11,19 @@ export default function Mega() {
         { name: 'VisualStudio', src: './img/VisualStudio-icon.png' }
     ]
 
+    const partSummary = {
+        front: {
+            title: '프론트엔드',
+            desc: [
+                '영화관 메인 페이지 레이아웃 구성 및 박스오피스 작품을 상단에 노출하고, 호버 효과와 오버레이를 활용해 영화 상세 정보 확인 가능',
+                '혜택 섹션에서 setInterval을 활용한 자동 재생 기능과 이전·다음·정지 컨트롤을 구현하여 편리한 정보 탐색 가능',
+                '큐레이션 섹션에서 호버 효과를 활용해 한 화면에서 여러 영화의 정보를 동시에 확인 가능',
+                '빠른 예매 페이지에서 성인·청소년·경로·우대 타입별 인원 설정 및 초기화 기능을 구현하고 경로·우대 선택 시 안내 모달로 추가 정보 제공'
+            ],
+            pills: ['메인 홈 구성', '자동 재생 배너', '인원 선택 기능', '조건부 모달']
+        }
+    };
+
     return (
         <div className="container">
             <div className="detail_info">
@@ -79,14 +92,15 @@ export default function Mega() {
                 </div>
 
                 {/* 상세 설명 섹션 */}
-                <div className="info_content_ott">
-                    <div className="front">
-                        <h2>상세설명</h2>
+                <div className="info_content">
+                    <div className="detail_content">
+                        <h6>상세설명</h6>
                         <p>
-                            JavaScript를 사용하여 영화 선택 및 페이지 전환과 같은 사용자 이벤트를 처리하고,
-                            동적인 UI 요소를 구현하여 실제 영화 예매 사이트와 유사한 사용자 경험을 제공합니다.
-                            HTML5, CSS3, JavaScript를 활용해 영화관 메인 페이지와 상단 네비게이션 메뉴의 빠른 예매 화면을
-                            구현하고, 시멘틱 마크업과 CSS 레이아웃으로 웹 표준에 맞게 구조를 설계했습니다.
+                            JavaScript를 사용하여 영화 정보 확인 및 페이지 전환과 같은 사용자 이벤트를 처리하고
+                            동적인 UI 요소를 구현하여 실제 영화 예매 사이트와 유사한 사용자 경험을 제공합니다.<br />
+                            HTML5, CSS3, JavaScript를 활용해 영화관 메인 페이지와 상단 네비게이션 메뉴의 빠른 예매 화면 및
+                            예매 화면에서의 인원 수, 좌석 선택을 통한 예매 과정을 구현했습니다.<br />
+                            시멘틱 마크업과 CSS 레이아웃으로 웹 표준에 맞게 구조를 설계했습니다.
                         </p>
                     </div>
                 </div>
@@ -95,6 +109,22 @@ export default function Mega() {
                 <div className="info_project">
                     <p className="info_project_sub">프로젝트 기능</p>
                     <h1>기능별 기여도</h1>
+                    <div className="box">
+                        {/* <h6>{partSummary.front.title}</h6> */}
+                        <div className="box_desc_list">
+                            {partSummary.front.desc.map((item, i) => (
+                                <div key={i} className="box_desc_item">
+                                    <span className="box_desc_dot"></span>
+                                    <p>{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="minibox">
+                            {partSummary.front.pills.map((pill, i) => (
+                                <span key={i}>{pill}</span>
+                            ))}
+                        </div>
+                    </div>
                     <div className="info_project_flex">
 
                         {/* 메인 */}

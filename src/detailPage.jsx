@@ -66,15 +66,18 @@ export default function DetailPage() {
         },
         {
             type: "백엔드 - 관리자페이지",
-            title: "관리자 대시보드",
-            img: "img/GIF/admin.gif",
-            desc: "차량 상태 및 예약 현황을 한눈에 파악하며, 데이터 시각화를 통해 효율적인 운영을 돕습니다."
+            title: "데이터 시각화(월별 가입자 수)",
+            img: "img/data01.png",
+            desc: `월별 매출액 추이를 꺾은선 그래프로 시각화하여 성수기·비수기 매출의 흐름을 파악할 수 있습니다.
+                7, 12월은 피크, 2, 9월은 저조한 패턴이 반복되며 2026년도부터 전반적인 회복이 확인됩니다.
+                성수기의 차량·인력 선제 대응과 비수기의 프로모션·장기 대여 이벤트 기획에 활용될 수 있다는 분석이 가능합니다.`
         },
         {
-            type: "데이터 시각화",
-            title: "로그인",
-            img: "img/GIF/login.gif",
-            desc: "사용자 인증 및 보안을 강화하여 안전한 서비스 이용 환경을 제공합니다."
+            type: "백엔드 - 관리자페이지",
+            title: "데이터 시각화(차종별 예약횟수)",
+            img: "img/data02.png",
+            desc: `차량과 예약 테이블을 join한 결과물로 예약 건수 상위 9개 모델을 가로 막대 그래프로 시각화하여 인기 차종 순위를 한눈에 확인할 수 있습니다.
+                상위 9개의 모델의 예약 건수 차이를 한눈에 파악할 수 있으며 인기 모델 우선 확보와 프로모션 전략에 대한 분석이 가능합니다.`
         }
     ];
 
@@ -89,18 +92,30 @@ export default function DetailPage() {
     const partSummary = {
         front: {
             title: '프론트엔드',
-            desc: 'React(Vite) 기반 메인 홈 레이아웃 구성 및 API 연동',
-            pills: ['신규/인기차량', 'FullCalendar API 연동', '최근 본 차량']
+            desc: [
+                '홈 화면 레이아웃과 조건 필터링을 통한 신규·인기차량 큐레이션 구성',
+                'FullCalendar API를 활용한 듀얼 캘린더 커스터마이징 및 선택한 날짜와 시간 값 예약 페이지로 전달',
+                'Context를 활용한 공통 데이터 관리로 중복 API 호출 최소화'
+            ],
+            pills: [ '홈 화면 레이아웃', '신규·인기차량 큐레이션', 'FullCalendar API 연동', '데이터 중복 관리']
         },
         back: {
-            title: '백엔드',
-            desc: 'PHP + MySQL 기반 인증 및 예약 API 설계',
-            pills: ['차량/회원/예약 관리', 'CRUD', '검색']
+            title: '백엔드 고도화',
+            desc: [
+                'MySQL DBMS를 연동하여 관리자 페이지 CRUD 기능 구현',
+                '다중 테이블 조인을 통해 통합 정보를 제공 및 실시간으로 예약 상태와 삭제 가능 여부 확인 가능',
+                '검색·정렬을 통해 쉽고 빠른 정보 탐색 가능'
+            ],
+            pills: ['차량·회원·예약 관리', 'CRUD', '검색', '정렬', '다중 테이블 조인', '실시간 예약 상태']
         },
         data: {
             title: '데이터 시각화',
-            desc: '예약 현황·이용률 차트 및 관리자 대시보드 구현',
-            pills: ['가입자수 그래프', '차종별 예약횟수']
+            desc: [
+                '다량의 더미데이터 설계', 
+                'Python(Pandas)으로 데이터 정제 후 조인을 통한 예약 현황·이용률 차트 및 관리자 대시보드 구현',
+                '그래프를 통한 데이터 분석'
+            ],
+            pills: ['가입자수 그래프', '차종별 예약횟수', '그래프 분석']
         },
     };
 
@@ -217,24 +232,23 @@ export default function DetailPage() {
                         <p>
                             와이어프레임을 기반으로 HTML5, CSS3, JavaScript 및 React(Vite)를 활용하여 메인 화면, 목록, 상세 화면 등 UI 컴포넌트를 구현했습니다.<br />
                             PHP와 MySQL을 연동하여 회원가입 및 로그인 기능을 개발하고, 데이터베이스 기반 사용자 인증 흐름을 적용하였습니다.<br />
-                            UI 중심의 Management System 웹 애플리케이션을 팀 프로젝트 형태로 설계·구현·배포(cafe24)하는 웹 서비스 개발입니다.
+                            UI 중심의 Management System 웹 애플리케이션을 팀 프로젝트 형태로 설계·구현·배포(cafe24)하는 웹 서비스를 개발했습니다.
                         </p>
                     </div>
                     <div className="detail_content">
                         <h6>백엔드 고도화</h6>
                         <p>
-                            Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축하고 MySQL DBMS를 연동하여 ..
-                            회원관리 및 데이터 처리 기능을 REST API 기반으로 구현<br />
-                            Axios 기반 API 통신을 적용하여 React 프론트엔드와 Spring Boot 백엔드 간 데이터 연동 기능을 구현<br />
-                            완성된 프로젝트는 Cloudtype 클라우드 환경에 배포하여 실제 웹 서비스 형태로 실행
+                            Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축했습니다.<br />
+                            MySQL DBMS를 연동하여 차량·회원·예약관리 및 데이터 처리 기능을 REST API 기반으로 구현했습니다.<br />
+                            Axios 기반 API 통신을 적용하여 React 프론트엔드와 Spring Boot 백엔드 간 데이터 연동이 가능하며<br />
+                            완성된 프로젝트는 Cloudtype 클라우드 환경에 배포하여 실제 웹 서비스 형태로 실행할 수 있습니다.
                         </p>
                     </div>
                     <div className="detail_content">
                         <h6>데이터 시각화</h6>
                         <p>
-                            기존 시스템의 비즈니스 로직을 분석하여 Python(Pandas)으로 대량의 더미데이터를 설계하고,
-                            Matplotlib/Seaborn을 활용한 통계 대시보드를 관리자 메뉴에 통합 구현. 데이터 수집, 정제,
-                            시각화 및 서비스 반영으로 이어지는 Full-Stack 데이터 파이프라인 역량 함양에 집중.
+                            기존 시스템의 비즈니스 로직을 분석하여 Python(Pandas)으로 대량의 더미데이터를 설계하였으며 불필요한 데이터를 정제하였습니다.<br />
+                            Matplotlib/Seaborn을 활용한 데이터 시각화 결과물을 관리자 페이지의 통계 대시보드에서 확인할 수 있습니다.
                         </p>
                     </div>
                 </div>
@@ -246,7 +260,14 @@ export default function DetailPage() {
                     <div className="impact">
                         <div className="box">
                             <h6>{partSummary.front.title}</h6>
-                            <p>{partSummary.front.desc}</p>
+                            <div className="box_desc_list">
+                                {partSummary.front.desc.map((item, i) => (
+                                    <div key={i} className="box_desc_item">
+                                        <span className="box_desc_dot"></span>
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
+                            </div>
                             <div className="minibox">
                                 {partSummary.front.pills.map((pill, i) => (
                                     <span key={i}>{pill}</span>
@@ -255,7 +276,14 @@ export default function DetailPage() {
                         </div>
                         <div className="box">
                             <h6>{partSummary.back.title}</h6>
-                            <p>{partSummary.back.desc}</p>
+                            <div className="box_desc_list">
+                                {partSummary.back.desc.map((item, i) => (
+                                    <div key={i} className="box_desc_item">
+                                        <span className="box_desc_dot"></span>
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
+                            </div>
                             <div className="minibox">
                                 {partSummary.back.pills.map((pill, i) => (
                                     <span key={i}>{pill}</span>
@@ -264,7 +292,14 @@ export default function DetailPage() {
                         </div>
                         <div className="box">
                             <h6>{partSummary.data.title}</h6>
-                            <p>{partSummary.data.desc}</p>
+                            <div className="box_desc_list">
+                                {partSummary.data.desc.map((item, i) => (
+                                    <div key={i} className="box_desc_item">
+                                        <span className="box_desc_dot"></span>
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
+                            </div>
                             <div className="minibox">
                                 {partSummary.data.pills.map((pill, i) => (
                                     <span key={i}>{pill}</span>

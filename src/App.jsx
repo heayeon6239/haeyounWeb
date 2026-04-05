@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './home.jsx'
 import DetailPage from './detailPage.jsx'
@@ -20,7 +20,7 @@ import Footer from './common/footer.jsx'
 export default function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -29,7 +29,7 @@ export default function App() {
         <Route path='/mega' element={<Mega />} />
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter>
 
   )
 }

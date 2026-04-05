@@ -261,7 +261,8 @@ h2 {
 /* 프로젝트 기능 설명 */
 .container .detail_info .info_project {
     width: 100%;
-    margin-top: 80px;
+    border-top: 1px solid #f2f2f7;
+    padding-top: 80px;
 }
 
 .container .detail_info .info_project .info_project_flex {

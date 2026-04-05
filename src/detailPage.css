@@ -325,23 +325,18 @@ h1 {
     gap: 30px;
     width: 100%;
     border-top: 1px solid #f2f2f7;
-    padding:  80px 0;
+    padding: 80px 0;
 }
 
 .container .detail_info .info_content .detail_content {
-    /* background: #f5f5f7;
-    border-radius: 30px; */
     padding-bottom: 20px;
     border-bottom: 1px solid #e7e7ee;
 }
+
 .container .detail_info .info_content .detail_content:last-child {
+    padding-bottom: 0;
     border-bottom: none;
 }
-/* .container .detail_info .info_content .content {
-    background: #f5f5f7;
-    border-radius: 30px;
-    padding: 50px;
-} */
 
 .container .detail_info .info_content h6 {
     font-size: 24px;
@@ -382,10 +377,6 @@ h1 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.info_project_slider .impact .box.on {
-    border: 2px solid #1d1d1f;
-}
-
 .info_project_slider .impact .box h6 {
     font-size: 16px;
     font-weight: 600;
@@ -393,11 +384,34 @@ h1 {
     margin-bottom: 8px;
 }
 
-.info_project_slider .impact .box p {
+.info_project_slider .impact .box .box_desc_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.info_project_slider .impact .box .box_desc_list .box_desc_item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.info_project_slider .impact .box .box_desc_list .box_desc_item .box_desc_dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6e6e73;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.info_project_slider .impact .box .box_desc_list .box_desc_item>p {
     font-size: 15px;
     color: #6e6e73;
-    line-height: 1.6;
-    margin-bottom: 14px;
+    line-height: 1.7;
+    margin: 0;
+    word-break: keep-all;
 }
 
 .info_project_slider .impact .box .minibox {
@@ -489,6 +503,12 @@ h1 {
 .slider_wrapper .card_text_area {
     padding: 40px !important;
     background: #fff;
+}
+
+.slider_wrapper .card_text_area .write {
+    line-height: 1.8;
+    font-weight: 500;
+    color: #86868b;
 }
 
 /* 반응형 처리 */

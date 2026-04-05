@@ -16,6 +16,18 @@ export default function OttPage() {
 
     ]
 
+    const partSummary = {
+        front: {
+            title: '프론트엔드',
+            desc: [
+                'TOP 10 콘텐츠를 메인에 노출하여 인기 작품을 한눈에 확인할 수 있으며 3초마다 자동으로 슬라이드되는 동적 기능 구현',
+                'TMDB(Open Movie Database) API를 활용하여 장르별 작품을 분류하고 슬라이드를 통해 다양한 작품 탐색 가능',
+                '장르별 모두보기 클릭 시 모달로 해당 장르의 전체 작품을 표시하며 개별 작품으로 빠르게 접근 가능'
+            ],
+            pills: [ 'TMDB API 연동', 'TOP 10 자동 재생 배너', '장르별 분류', '모달 탐색']
+        }
+    };
+
     return (
         <div className="container">
             <div className="detail_info">
@@ -53,7 +65,7 @@ export default function OttPage() {
                             <h5>OTT 프로젝트</h5>
                             <h2>프로젝트 링크 이동하기</h2>
                             <div className="link_buttons">
-                                <a href="https://heayeon6239.github.io/ott_project2025/" target="_blank" rel="noreferrer" className="link_btn site">OTT</a>
+                                <a href="https://heayeon6239.github.io/ott_project2025/" target="_blank" rel="noreferrer" className="link_btn ott">OTT</a>
                             </div>
                         </div>
 
@@ -97,13 +109,15 @@ export default function OttPage() {
                 </div>
 
                 {/* 상세 설명 섹션 */}
-                <div className="info_content_ott">
-                    <div className="front">
-                        <h2>상세설명</h2>
+                <div className="info_content">
+                    <div className="detail_content">
+                        <h6>상세</h6>
                         <p>
-                            React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를 구현했습니다.<br/>
+                            React와 Context API를 활용해 OTT 웹 서비스의 메인 및 콘텐츠 페이지를 구현했습니다.<br />
                             표준 Fetch API를 활용하여 TMDB(Open Movie Database) API를 JSON 형식으로 연동해
-                            영화 · 드라마 데이터를 동적으로 표시하여 GitHub Pages에 배포했습니다.
+                            영화·드라마 데이터를 동적으로 표시했고 <br/>
+                            로그인과 모달을 이용한 상세정보 확인 등의 기능을 통해 실제 OTT 웹 사이트와 유사한 사용자 경험을 제공하여
+                            GitHub Pages에 배포했습니다.
                         </p>
                     </div>
                 </div>
@@ -112,6 +126,22 @@ export default function OttPage() {
                 <div className="info_project">
                     <p className="info_project_sub">프로젝트 기능</p>
                     <h1>기능별 기여도</h1>
+                    <div className="box">
+                        {/* <h6>{partSummary.front.title}</h6> */}
+                        <div className="box_desc_list">
+                            {partSummary.front.desc.map((item, i) => (
+                                <div key={i} className="box_desc_item">
+                                    <span className="box_desc_dot"></span>
+                                    <p>{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="minibox">
+                            {partSummary.front.pills.map((pill, i) => (
+                                <span key={i}>{pill}</span>
+                            ))}
+                        </div>
+                    </div>
                     <div className="info_project_flex">
 
                         {/* 랭킹 */}
