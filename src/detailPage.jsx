@@ -131,7 +131,7 @@ export default function DetailPage() {
                 <div className="info_table">
                     {/* 왼쪽 */}
                     <div className="overlay">
-                        <img src="/img/fullSize02.png" alt="차랑차랑" />
+                        <img src="img/fullSize02.png" alt="차랑차랑" />
                     </div>
 
                     {/* 오른쪽 */}
