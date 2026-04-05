@@ -74,11 +74,11 @@ export default function OttPage() {
                             <div className="account_card">
                                 <div className="info_row">
                                     <span className="label">ID</span>
-                                    <span className="value">test</span>
+                                    <span className="value">1jo</span>
                                 </div>
                                 <div className="info_row">
                                     <span className="label">PW</span>
-                                    <span className="value">1234</span>
+                                    <span className="value">1111</span>
                                 </div>
                             </div>
                         </div>
