@@ -205,7 +205,7 @@ export default function Home() {
                     {/* 렌트카 웹사이트 개발 */}
                     <div className="card01">
                         <div className="project-img">
-                            <img className="charang" src="img/charang3.png" alt="렌트카 프로젝트" />
+                            <img className="charang" src="/img/charang3.png" alt="렌트카 프로젝트" />
                         </div>
                         <div className="project-info">
                             <h3>렌트카 웹사이트 개발</h3>
@@ -232,13 +232,13 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="project-img">
-                            <img className="ott" src="img/ott.png" alt="ott 프로젝트" />
+                            <img className="ott" src="/img/ott.png" alt="ott 프로젝트" />
                         </div>
                     </div>
                     {/* 영화관 프로젝트 */}
                     <div className="card03">
                         <div className="project-img">
-                            <img className="movie" src="img/movie.png" alt="영화관 프로젝트" />
+                            <img className="movie" src="/img/movie.png" alt="영화관 프로젝트" />
                         </div>
                         <div className="project-info">
                             <h3>영화관 메인 및 <br /> 예매 웹페이지 구현</h3>
