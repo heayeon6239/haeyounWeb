@@ -144,7 +144,7 @@ body {
 .card_header h4 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
   color: #fefefe;
   letter-spacing: 10px;
 }
@@ -168,7 +168,7 @@ body {
 
 .section01 .inner .profile_main_card .card_header .description {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   /* color: rgba(255, 255, 255, 0.85); */
   color: rgba(255, 255, 255, 0.55);
   width: 470px;
