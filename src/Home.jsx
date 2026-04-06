@@ -95,13 +95,24 @@ export default function Home() {
 
                         {/* 상단 프로필 헤더 */}
                         <div className="card_header">
-                            <div className="profile_img">
+                            {/* <div className="profile_img">
                                 <img src="./img/profile_img.png" alt="프로필사진" />
+                            </div> */}
+                            <div className="profile_right">
+                                <h4>정해연</h4>
+                                {/* <h5>JUNG HAE YOUN</h5> */}
+                                <span>2000.11.24</span><br/>
+                                <span>heayeon1124@naver.com</span>
                             </div>
-                            <h4>정해연</h4>
-                            <p>2000.11.24</p>
-                            <p>heayeon1124@naver.com</p>
-                            <p className="description">"UXUI디자인과 풀스텍개발을 할 수 있습니다."</p>
+                                <div className="tl_group_line" />
+                            <p className="description">
+                                <span>안녕하세요.<br/>
+                                디자인의 감각으로 사용자를 위한 화면을 그리고<br/>
+                                복잡한 로직을 코드로 구현하는 풀스택 개발자입니다.</span><br/><br/>
+                                사용자에게 닿는 모든 순간의 UI와 기능들이 매끄럽게 작동하도록 안정적인 코드를 작성하기 위해 노력합니다.
+                                새로운 것을 배우고자 항상 열린 자세를 유지하며 팀원들과 적극적으로 소통하고 협업할 준비가 되어 있습니다.<br/><br/>
+                                디자이너와 개발자 사이의 경계를 허물고 맡은 일에 책임감 있는 자세로 임하여 최고의 시너지를 만들어내겠습니다.
+                            </p>
                         </div>
 
                         {/* 헤더 구분선 */}
@@ -210,7 +221,7 @@ export default function Home() {
                         <div className="project-info">
                             <h3>렌트카 웹사이트 개발</h3>
                             <p>조별 프로젝트로 와이어프레임 설계를 바탕으로 React(Vite) UI를 구현하고,
-                                Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축하고 
+                                Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축하고
                                 MySQL DBMS를 실시간으로 연동한 렌터카 관리 시스템을 Cloudtype에 배포
                             </p>
                             <Link to={'/charang'} className="detailPage" onClick={scrollToTop}>

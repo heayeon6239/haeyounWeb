@@ -29,7 +29,7 @@ export default function Mega() {
             <div className="detail_info">
                 <h2>MEGABOX <br /> 메인/예매 사이트</h2>
                 <p className="info_comment mega">
-                    HTML5, CSS3, Java Script를 활용해 영화관 메인 페이지와 예매 화면을 구현하고,<br />
+                    HTML5, CSS3, Java Script를 활용해 영화관 메인 페이지와 예매 화면을 구현한 프론트엔드 프로젝트.<br />
                     <span>시멘틱 마크업</span>과 <span>CSS 레이아웃</span>으로 웹 표준에 맞게 구조를 설계하여<br />
                     실제 영화 예매 사이트와 유사한 사용자 경험을 제공했습니다.
                 </p>

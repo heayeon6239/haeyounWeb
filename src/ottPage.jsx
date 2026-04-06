@@ -20,9 +20,10 @@ export default function OttPage() {
         front: {
             title: '프론트엔드',
             desc: [
-                'TOP 10 콘텐츠를 메인에 노출하여 인기 작품을 한눈에 확인할 수 있으며 3초마다 자동으로 슬라이드되는 동적 기능 구현',
-                'TMDB(Open Movie Database) API를 활용하여 장르별 작품을 분류하고 슬라이드를 통해 다양한 작품 탐색 가능',
-                '장르별 모두보기 클릭 시 모달로 해당 장르의 전체 작품을 표시하며 개별 작품으로 빠르게 접근 가능'
+                'TOP 10 콘텐츠를 메인에 노출하여 인기 작품을 한눈에 확인할 수 있으며, 10초마다 setInterval로 자동 슬라이드되는 동적 배너 구현 (cleanup으로 메모리 누수 방지)',
+                'TMDB API를 커스텀 훅(useOttData)으로 분리해 영화·드라마 12개 카테고리를 장르·국가·키워드 파라미터로 페이지별 fetch 처리',
+                '장르별 콘텐츠 슬라이드 구현 및 Context API로 슬라이드 위치 상태를 전역 관리',
+                '모두보기 클릭 시 모달로 해당 장르의 전체 작품을 표시하며, 토글로 추가 페이지 데이터를 펼쳐볼 수 있도록 처리'
             ],
             pills: [ 'TMDB API 연동', 'TOP 10 자동 재생 배너', '장르별 분류', '모달 탐색']
         }
@@ -34,7 +35,7 @@ export default function OttPage() {
                 <h2>OTT 미니 프로젝트</h2>
                 <p className="info_comment ott">
                     <span>TMDB API 연동</span>을 통해 실시간 콘텐츠 데이터를 동적으로 구현한 4인 팀 프로젝트로<br />
-                    로그인부터 콘텐츠 상세 페이지까지 완성도 높은 <span>OTT 웹 서비스</span>를 구축했습니다.
+                    로그인부터 콘텐츠 상세 페이지까지 완성도 높은 <span>프론트엔드 OTT 웹 서비스</span>를 구축했습니다.
                 </p>
 
                 <div className="info_table_ott">

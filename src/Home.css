@@ -93,6 +93,7 @@ body {
   margin-bottom: 25px;
   color: #333;
 }
+
 .section03 .inner .section_comment {
   font-size: 25px;
   /* font-weight: 800; */
@@ -100,7 +101,8 @@ body {
   margin-bottom: 25px;
   color: #333;
 }
-.section03 .inner .section_comment > span {
+
+.section03 .inner .section_comment>span {
   color: #0071e3;
 }
 
@@ -112,20 +114,26 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 60px;
-  padding: 50px 60px;
+  padding: 60px;
+  display: flex;
 }
 
 /* 프로필 헤더 — 컴팩트 */
 .section01 .inner .profile_main_card .card_header {
   text-align: center;
-  margin-bottom: 28px;
   background: transparent;
   padding: 10px 20px;
   width: 100%;
   border-radius: 20px;
+  flex: 3;
 }
 
-.section01 .inner .profile_main_card .card_header .profile_img > img {
+.section01 .inner .profile_main_card .card_header .profile_right {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.section01 .inner .profile_main_card .card_header .profile_img>img {
   width: 100px;
   height: 100px;
   background: #d3dde6;
@@ -134,22 +142,45 @@ body {
 }
 
 .card_header h4 {
-  font-size: 23px;
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   color: #fefefe;
+  letter-spacing: 10px;
 }
 
-.section01 .inner .profile_main_card .card_header p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.6);
+.section01 .inner .profile_main_card .card_header i {
+  display: inline-block;
+  /* 크기(width)를 적용하기 위해 필수! */
+  width: 30px;
+  text-align: center;
+  /* 아이콘을 30px 영역 안에서 가운데 정렬 */
+  vertical-align: middle;
+  /* 옆에 있는 텍스트랑 높이 맞추기 */
+}
+
+.section01 .inner .profile_main_card .card_header i,
+.section01 .inner .profile_main_card .card_header span {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.63);
   margin-bottom: 6px;
 }
 
 .section01 .inner .profile_main_card .card_header .description {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  /* color: rgba(255, 255, 255, 0.85); */
+  color: rgba(255, 255, 255, 0.55);
+  width: 470px;
+  word-break: keep-all;
+  text-align: left;
+  line-height: 1.8;
+  padding-top: 30px;
+}
+
+.section01 .inner .profile_main_card .card_header .description>span {
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
 }
 
 /* 헤더 구분선 */
@@ -162,17 +193,24 @@ body {
 /* 타임라인 2열 그리드 */
 .section01 .inner .profile_main_card .card_bottom_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   text-align: left;
+  flex: 2
 }
 
 /* 카테고리 헤더 */
-.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header{
+.section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+}
+
+.section01 .inner .profile_main_card .card_header .tl_group_line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
 }
 
 .section01 .inner .profile_main_card .card_bottom_grid .tl_group .tl_group_header .tl_group_line {

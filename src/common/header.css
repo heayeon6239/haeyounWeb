@@ -23,11 +23,12 @@
 .header>.navi a {
   margin-left: 30px;
   text-decoration: none;
-  color: #86868b;
-  font-size: 0.9rem;
+  color: #444;
+  font-size: 17px;
   transition: color 0.3s;
 }
 
 .header>.navi a:hover {
-  color: #1d1d1f;
+  color: #0281ff;
+  text-shadow: 0 0 0.6px #0281ff, 0 0 0.6px #0281ff;
 }
