@@ -29,6 +29,6 @@
 }
 
 .header>.navi a:hover {
-  color: #0281ff;
-  text-shadow: 0 0 0.6px #0281ff, 0 0 0.6px #0281ff;
+  color: #333;
+  text-shadow: 0 0 0.6px #333, 0 0 0.6px #333;
 }

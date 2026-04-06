@@ -128,7 +128,7 @@ export default function Mega() {
                     <div className="info_project_flex">
 
                         {/* 메인 */}
-                        <div className="function_card">
+                        <div className="function_card_mega">
                             <div className="card_img_box">
                                 <img src="img/mega01.png" alt="메인" className="mega_img" />
                             </div>
@@ -142,7 +142,7 @@ export default function Mega() {
                         </div>
 
                         {/* 슬라이드 */}
-                        <div className="function_card">
+                        <div className="function_card_mega">
                             <div className="card_img_box">
                                 <img src="img/mega02.png" alt="슬라이드" className="mega_img" />
                             </div>
@@ -156,7 +156,7 @@ export default function Mega() {
                         </div>
 
                         {/* 예매 */}
-                        <div className="function_card">
+                        <div className="function_card_mega">
                             <div className="card_img_box">
                                 <img src="img/mega03.png" alt="예매" className="mega_img" />
                             </div>

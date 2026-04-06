@@ -97,7 +97,7 @@ export default function DetailPage() {
                 'FullCalendar API를 활용한 듀얼 캘린더 커스터마이징 및 선택한 날짜와 시간 값 예약 페이지로 전달',
                 'Context를 활용한 공통 데이터 관리로 중복 API 호출 최소화'
             ],
-            pills: [ '홈 화면 레이아웃', '신규·인기차량 큐레이션', 'FullCalendar API 연동', '데이터 중복 관리']
+            pills: ['홈 화면 레이아웃', '신규·인기차량 큐레이션', 'FullCalendar API 연동', '데이터 중복 관리']
         },
         back: {
             title: '백엔드 고도화',
@@ -111,13 +111,25 @@ export default function DetailPage() {
         data: {
             title: '데이터 시각화',
             desc: [
-                '다량의 더미데이터 설계', 
+                '다량의 더미데이터 설계',
                 'Python(Pandas)으로 데이터 정제 후 조인을 통한 예약 현황·이용률 차트 및 관리자 대시보드 구현',
                 '그래프를 통한 데이터 분석'
             ],
             pills: ['가입자수 그래프', '차종별 예약횟수', '그래프 분석']
         },
     };
+
+    const ProjectSlider = ({ projectFunctions, partSummary }) => {
+        const [currentStep, setCurrentStep] = useState(0);
+
+        const handlePrev = () => {
+            setCurrentStep((prev) => (prev === 0 ? projectFunctions.length - 1 : prev - 1));
+        };
+
+        const handleNext = () => {
+            setCurrentStep((prev) => (prev === projectFunctions.length - 1 ? 0 : prev + 1));
+        };
+    }
 
     return (
         <div className="container">
@@ -253,92 +265,77 @@ export default function DetailPage() {
                     </div>
                 </div>
 
-                {/* 프로젝트 기능 설명 섹션 */}
-                <div className="info_project_slider">
-                    <p className="info_project_sub">프로젝트 기능</p>
-                    <h1>기능별 기여도</h1>
-                    <div className="impact">
-                        <div className="box">
-                            <h6>{partSummary.front.title}</h6>
-                            <div className="box_desc_list">
-                                {partSummary.front.desc.map((item, i) => (
-                                    <div key={i} className="box_desc_item">
-                                        <span className="box_desc_dot"></span>
-                                        <p>{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="minibox">
-                                {partSummary.front.pills.map((pill, i) => (
-                                    <span key={i}>{pill}</span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="box">
-                            <h6>{partSummary.back.title}</h6>
-                            <div className="box_desc_list">
-                                {partSummary.back.desc.map((item, i) => (
-                                    <div key={i} className="box_desc_item">
-                                        <span className="box_desc_dot"></span>
-                                        <p>{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="minibox">
-                                {partSummary.back.pills.map((pill, i) => (
-                                    <span key={i}>{pill}</span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="box">
-                            <h6>{partSummary.data.title}</h6>
-                            <div className="box_desc_list">
-                                {partSummary.data.desc.map((item, i) => (
-                                    <div key={i} className="box_desc_item">
-                                        <span className="box_desc_dot"></span>
-                                        <p>{item}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="minibox">
-                                {partSummary.data.pills.map((pill, i) => (
-                                    <span key={i}>{pill}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider_wrapper">
-                        {/* 이전 버튼*/}
-                        <button className="slider_btn prev" onClick={handlePrev}>&lt;</button>
+                <section className="info_project_slider">
+                    <div className="inner">
+                        <p className="info_project_sub">프로젝트 기능</p>
+                        <h1 className="section_main_title">기능별 기여도</h1>
 
-                        <div className="function_card">
-                            <div className="card_img_box">
-                                <img
-                                    src={projectFunctions[currentStep].img}
-                                    alt={projectFunctions[currentStep].title}
-                                    key={currentStep}
-                                />
-                            </div>
-
-                            <div className="card_text_area">
-                                <h4>{projectFunctions[currentStep].type}</h4>
-                                <h1>{projectFunctions[currentStep].title}</h1>
-                                <p className="write" style={{ whiteSpace: 'pre-line', lineHeight: 1.8 }}>
-                                    {projectFunctions[currentStep].desc}
-                                </p>
-
-                                <div className="step_dots">
-                                    {projectFunctions.map((_, i) => (
-                                        <span key={i} className={`dot ${i === currentStep ? 'active' : ''}`}></span>
-                                    ))}
+                        {/* 상단 기여도 박스 영역 */}
+                        <div className="impact">
+                            {Object.values(partSummary).map((part, index) => (
+                                <div key={index} className="box">
+                                    <h6>{part.title}</h6>
+                                    <div className="box_desc_list">
+                                        {part.desc.map((item, i) => (
+                                            <div key={i} className="box_desc_item">
+                                                <span className="box_desc_dot"></span>
+                                                <p>{item}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="minibox">
+                                        {part.pills.map((pill, i) => (
+                                            <span key={i}>{pill}</span>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
 
-                        {/* 다음 버튼: wrapper 안으로 이동 */}
-                        <button className="slider_btn next" onClick={handleNext}>&gt;</button>
+                        {/* 애플 스타일 가로 슬라이더 영역 */}
+                        <div className="slider_viewport">
+                            <div
+                                className="slider_track"
+                                style={{
+                                    // 중앙 정렬을 위한 계산: (카드너비 80% + 간격 30px) 만큼 이동
+                                    transform: `translateX(calc(-${currentStep * 100}% - ${currentStep * 30}px))`
+                                }}
+                            >
+                                {projectFunctions.map((item, i) => (
+                                    <div
+                                        key={i}
+                                        className={`function_card ${i === currentStep ? 'active' : ''}`}
+                                        onClick={() => setCurrentStep(i)}
+                                    >
+                                        <div className="card_img_box">
+                                            <img src={item.img} alt={item.title} />
+                                        </div>
+                                        <div className="card_text_area">
+                                            <h4>{item.type}</h4>
+                                            <h1 className="card_title">{item.title}</h1>
+                                            <p className="card_desc">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* 하단 페이지네이션 점 */}
+                            <div className="slider_nav_dots">
+                                {projectFunctions.map((_, i) => (
+                                    <button
+                                        key={i}
+                                        className={`nav_dot ${i === currentStep ? 'active' : ''}`}
+                                        onClick={() => setCurrentStep(i)}
+                                    />
+                                ))}
+                            </div>
+                            {/* 슬라이더 컨트롤 버튼 */}
+                            <button className="slider_btn prev" onClick={(e) => { e.stopPropagation(); handlePrev(); }}>&lt;</button>
+                            <button className="slider_btn next" onClick={(e) => { e.stopPropagation(); handleNext(); }}>&gt;</button>
+
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

@@ -146,7 +146,7 @@ export default function OttPage() {
                     <div className="info_project_flex">
 
                         {/* 랭킹 */}
-                        <div className="function_card">
+                        <div className="function_card_ott">
                             <div className="card_img_box">
                                 <img src="img/ottScreen01.png" alt="랭킹" />
                             </div>
@@ -160,7 +160,7 @@ export default function OttPage() {
                         </div>
 
                         {/* 카테고리별 추천*/}
-                        <div className="function_card">
+                        <div className="function_card_ott">
                             <div className="card_img_box">
                                 <img src="img/ottScreen03.png" alt="카테고리" />
                             </div>

@@ -272,7 +272,7 @@ h2 {
 }
 
 /* 개별 기능 카드 (전체 너비의 절반씩 차지) */
-.container .detail_info .info_project .info_project_flex .function_card {
+.container .detail_info .info_project .info_project_flex .function_card_mega {
     flex: 1;
     background: #ffffff;
     border-radius: 24px;
@@ -284,28 +284,19 @@ h2 {
 }
 
 /* 1. 이미지 박스 (상단) - 여백을 완전히 제거합니다 */
-.container .detail_info .info_project .info_project_flex .card_img_box {
+.container .detail_info .info_project .info_project_flex .function_card_mega .card_img_box {
     width: 100% !important;
-    max-height: 296.15px;
-    min-height: 296.16px;
-    /* 높이를 적절하게 고정하세요 */
+    max-height: 296.16px;
     background-color: #f5f5f7;
-    display: flex !important;
-    justify-content: center;
+    display: block !important;
     padding: 0 !important;
-    /* ⭐ 기존 20px를 0으로 강제 수정 */
     margin: 0 !important;
     overflow: hidden !important;
-    /* 이미지가 둥근 모서리 밖으로 나가지 않게 함 */
     border-radius: 24px 24px 0 0;
-    /* 상단 모서리만 둥글게 */
 }
 
 /* 2. 이미지 설정 - 박스에 꽉 채웁니다 */
-.container .detail_info .info_project .info_project_flex .card_img_box .mega_img {
-    width: 140% !important;
-    height: 108% !important;
-    /* ⭐ contain은 여백을 남깁니다. 무조건 cover를 쓰세요! */
+.container .detail_info .info_project .info_project_flex .function_card_mega .card_img_box .mega_img {
     object-fit: cover !important;
     filter: none !important;
     transition: transform 0.5s ease;
