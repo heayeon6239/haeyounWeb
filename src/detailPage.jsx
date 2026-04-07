@@ -253,7 +253,8 @@ export default function DetailPage() {
                             Java 기반의 Spring Boot 프레임워크와 MyBatis(Persistence Framework)를 활용한 백엔드 서버를 구축했습니다.<br />
                             MySQL DBMS를 연동하여 차량·회원·예약관리 및 데이터 처리 기능을 REST API 기반으로 구현했습니다.<br />
                             Axios 기반 API 통신을 적용하여 React 프론트엔드와 Spring Boot 백엔드 간 데이터 연동이 가능하며<br />
-                            완성된 프로젝트는 Cloudtype 클라우드 환경에 배포하여 실제 웹 서비스 형태로 실행할 수 있습니다.
+                            완성된 프로젝트는 Cloudtype 클라우드 환경에 배포하여 실제 웹 서비스 형태로 실행할 수 있습니다.<br/>
+                            GitHub에서 팀원별 브랜치를 분리하고 Pull Request를 통해 코드 리뷰 후 main 브랜치에 병합하는 협업 방식을 적용했습니다.
                         </p>
                     </div>
                     <div className="detail_content">
